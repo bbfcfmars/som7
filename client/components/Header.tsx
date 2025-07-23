@@ -25,24 +25,28 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out overflow-hidden">
+    <header className="fixed top-0 left-0 right-0 z-50 overflow-hidden">
       {/* Gradient Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-transparent"
+        initial={{ height: '100%', opacity: 1 }}
         animate={{
           height: isScrolled ? '50%' : '100%',
           opacity: isScrolled ? 0.9 : 1
         }}
-        transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        style={{ willChange: 'height, opacity' }}
       />
 
       {/* Clean white background when scrolled */}
       <motion.div
         className="absolute inset-0 bg-white shadow-sm border-b border-gray-100"
+        initial={{ opacity: 0 }}
         animate={{
           opacity: isScrolled ? 1 : 0
         }}
-        transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
+        style={{ willChange: 'opacity' }}
       />
 
       <motion.div
