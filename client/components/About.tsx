@@ -1,6 +1,6 @@
 export function About() {
   return (
-    <section id="about" className="py-16 bg-section-light">
+    <section id="about" className="py-16 bg-section-light" style={{ boxShadow: '0 25px 30px -5px rgba(0, 0, 0, 0.95), 0 15px 20px -3px rgba(0, 0, 0, 0.6)' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
