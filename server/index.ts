@@ -19,3 +19,7 @@ export function createServer() {
 
   return app;
 }
+
+// For Vercel serverless deployment
+const app = createServer();
+export default app;
