@@ -26,11 +26,15 @@ function expressPlugin(): Plugin {
     apply: "serve", // Only apply during development (serve mode)
     configureServer(server) {
       // Only import server in development
-      const { createServer } = require("./server");
-      const app = createServer();
-
-      // Add Express app as middleware to Vite dev server
-      server.middlewares.use(app);
+      try {
+        const { createServer } = require("./server");
+        const app = createServer();
+        // Add Express app as middleware to Vite dev server
+        server.middlewares.use(app);
+      } catch (error) {
+        // Server not available, skip
+        console.log("Server not available for development");
+      }
     },
   };
 }
