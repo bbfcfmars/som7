@@ -70,13 +70,19 @@ export function Header() {
 
       <motion.div
         className="relative container mx-auto px-6"
-        initial={{ paddingTop: '1.5rem', paddingBottom: '1.5rem' }}
         animate={{
           paddingTop: isScrolled ? '0.25rem' : '1.5rem',
           paddingBottom: isScrolled ? '0.25rem' : '1.5rem'
         }}
-        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-        style={{ willChange: 'padding' }}
+        transition={{
+          duration: hasInitialized ? 0.3 : 0,
+          ease: [0.4, 0, 0.2, 1]
+        }}
+        style={{
+          willChange: 'padding',
+          paddingTop: isScrolled ? '0.25rem' : '1.5rem',
+          paddingBottom: isScrolled ? '0.25rem' : '1.5rem'
+        }}
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
