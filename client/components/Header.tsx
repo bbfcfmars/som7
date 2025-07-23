@@ -28,9 +28,9 @@ export function Header() {
         transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
       />
 
-      {/* Shadow when scrolled */}
+      {/* Clean white background when scrolled */}
       <motion.div
-        className="absolute inset-0 bg-white/85 backdrop-blur-md shadow-lg"
+        className="absolute inset-0 bg-white shadow-sm border-b border-gray-100"
         animate={{
           opacity: isScrolled ? 1 : 0
         }}
