@@ -21,7 +21,7 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+    <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ height: '100vh', minHeight: '100vh' }}>
       {/* Full-bleed Video Background */}
       <div className="absolute inset-0 w-full h-full">
         <div
