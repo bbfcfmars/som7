@@ -7,6 +7,7 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasInitialized, setHasInitialized] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
 
   const scrollToTop = () => {
