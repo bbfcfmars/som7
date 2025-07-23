@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 export function Contact() {
   return (
-    <section id="contact" className="py-20 bg-section-light shadow-2xl">
+    <section id="contact" className="py-20 bg-section-light" style={{ boxShadow: '0 15px 20px -5px rgba(0, 0, 0, 0.95), 0 10px 15px -3px rgba(0, 0, 0, 0.6)' }}>
       <div className="container mx-auto px-6">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
