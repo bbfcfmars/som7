@@ -32,7 +32,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex justify-center gap-[10%] flex-row w-auto flex-grow-0 items-center m-[5%_15%_5%_5%]">
+          <nav className="hidden md:flex justify-center gap-[34%] flex-row w-auto flex-grow-0 items-center m-[5%_15%_5%_5%]">
             <motion.a
               href="#about"
               className="text-black hover:text-primary font-poppins text-lg transition-colors"
