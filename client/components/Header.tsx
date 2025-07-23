@@ -17,11 +17,26 @@ export function Header() {
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
-      isScrolled
-        ? 'bg-white/85 backdrop-blur-md shadow-lg'
-        : 'bg-gradient-to-b from-white via-white/95 to-transparent'
-    }`}>
+    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out overflow-hidden">
+      {/* Gradient Background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-transparent"
+        animate={{
+          height: isScrolled ? '50%' : '100%',
+          opacity: isScrolled ? 0.9 : 1
+        }}
+        transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+      />
+
+      {/* Shadow when scrolled */}
+      <motion.div
+        className="absolute inset-0 bg-white/85 backdrop-blur-md shadow-lg"
+        animate={{
+          opacity: isScrolled ? 1 : 0
+        }}
+        transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+      />
+
       <motion.div
         className="relative container mx-auto px-6"
         animate={{
