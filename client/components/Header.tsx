@@ -102,11 +102,10 @@ export function Header() {
             <div className="flex flex-col space-y-4 pt-4">
               <motion.a
                 href="#about"
-                className="text-black font-poppins text-lg transition-colors"
+                className="text-black hover:text-primary font-poppins text-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
                 whileHover={{
                   scale: 1.05,
-                  color: "hsl(267, 73%, 57%)",
                   transition: {
                     type: "spring",
                     stiffness: 300,
@@ -120,11 +119,10 @@ export function Header() {
               </motion.a>
               <motion.a
                 href="#services"
-                className="text-black font-poppins text-lg transition-colors"
+                className="text-black hover:text-primary font-poppins text-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
                 whileHover={{
                   scale: 1.05,
-                  color: "hsl(267, 73%, 57%)",
                   transition: {
                     type: "spring",
                     stiffness: 300,
@@ -138,11 +136,10 @@ export function Header() {
               </motion.a>
               <motion.a
                 href="#contact"
-                className="text-black font-poppins text-lg transition-colors"
+                className="text-black hover:text-primary font-poppins text-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
                 whileHover={{
                   scale: 1.05,
-                  color: "hsl(267, 73%, 57%)",
                   transition: {
                     type: "spring",
                     stiffness: 300,
