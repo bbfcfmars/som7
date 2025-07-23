@@ -5,8 +5,14 @@ import { motion } from "framer-motion";
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [hasInitialized, setHasInitialized] = useState(false);
 
   useEffect(() => {
+    // Set initial state based on current scroll position
+    const initialScrolled = window.scrollY > 10;
+    setIsScrolled(initialScrolled);
+    setHasInitialized(true);
+
     let ticking = false;
 
     const handleScroll = () => {
