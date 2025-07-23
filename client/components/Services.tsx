@@ -46,7 +46,7 @@ export function Services() {
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto p-[5%_10%_10%]">
           {/* Section Header */}
           <h2 className="font-manrope font-bold text-white text-3xl mb-16">
             Services
