@@ -73,9 +73,10 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <motion.nav
-            className="hidden md:flex justify-center gap-[34%] flex-row w-auto flex-grow-0 items-center m-[5%_15%_5%_5%]"
+            className="hidden md:flex items-center"
             animate={{
-              transform: isScrolled ? 'translateX(5%) scale(0.85)' : 'translateX(0%) scale(1)'
+              gap: isScrolled ? '2rem' : '34%',
+              margin: isScrolled ? '0' : '5% 15% 5% 5%'
             }}
             transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
           >
