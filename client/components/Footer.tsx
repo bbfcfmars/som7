@@ -17,7 +17,7 @@ export function Footer() {
           alt="Gaming setup background"
           className="w-full h-full object-cover m-auto blur-sm"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/95 via-black/80 to-transparent bg-[length:100%_50%] bg-bottom"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black from-0% to-transparent to-50%"></div>
       </div>
 
       {/* Content */}
