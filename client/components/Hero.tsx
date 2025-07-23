@@ -11,7 +11,9 @@ export function Hero() {
 
     return () => {
       // Cleanup script on unmount
-      const existingScript = document.querySelector('script[src="https://player.vimeo.com/api/player.js"]');
+      const existingScript = document.querySelector(
+        'script[src="https://player.vimeo.com/api/player.js"]',
+      );
       if (existingScript) {
         document.head.removeChild(existingScript);
       }
@@ -24,14 +26,14 @@ export function Hero() {
       <div className="absolute inset-0 w-full h-full">
         <div
           style={{
-            position: 'absolute',
-            top: '50%',
-            left: '50%',
-            transform: 'translate(-50%, -50%)',
-            width: '100vw',
-            height: '100vh',
-            minWidth: '100%',
-            minHeight: '100%'
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "100vw",
+            height: "100vh",
+            minWidth: "100%",
+            minHeight: "100%",
           }}
         >
           <iframe
@@ -40,12 +42,12 @@ export function Hero() {
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             style={{
-              position: 'absolute',
+              position: "absolute",
               top: 0,
               left: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover'
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
             }}
             title="hero-video"
           ></iframe>
@@ -74,8 +76,8 @@ export function Hero() {
               type: "spring",
               stiffness: 300,
               damping: 15,
-              duration: 0.2
-            }
+              duration: 0.2,
+            },
           }}
           whileTap={{ scale: 0.98 }}
         >

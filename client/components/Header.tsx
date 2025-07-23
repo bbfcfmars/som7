@@ -26,8 +26,8 @@ export function Header() {
       }
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -36,19 +36,19 @@ export function Header() {
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-transparent"
         animate={{
-          height: isScrolled ? '50%' : '100%',
-          opacity: isScrolled ? 0.9 : 1
+          height: isScrolled ? "50%" : "100%",
+          opacity: isScrolled ? 0.9 : 1,
         }}
         transition={{
           duration: hasInitialized ? 0.3 : 0,
           ease: [0.4, 0, 0.2, 1],
           height: { duration: hasInitialized ? 0.3 : 0 },
-          opacity: { duration: hasInitialized ? 0.3 : 0 }
+          opacity: { duration: hasInitialized ? 0.3 : 0 },
         }}
         style={{
-          willChange: 'height, opacity',
-          height: isScrolled ? '50%' : '100%',
-          opacity: isScrolled ? 0.9 : 1
+          willChange: "height, opacity",
+          height: isScrolled ? "50%" : "100%",
+          opacity: isScrolled ? 0.9 : 1,
         }}
       />
 
@@ -56,32 +56,32 @@ export function Header() {
       <motion.div
         className="absolute inset-0 bg-white shadow-sm border-b border-gray-100"
         animate={{
-          opacity: isScrolled ? 1 : 0
+          opacity: isScrolled ? 1 : 0,
         }}
         transition={{
           duration: hasInitialized ? 0.3 : 0,
-          ease: [0.4, 0, 0.2, 1]
+          ease: [0.4, 0, 0.2, 1],
         }}
         style={{
-          willChange: 'opacity',
-          opacity: isScrolled ? 1 : 0
+          willChange: "opacity",
+          opacity: isScrolled ? 1 : 0,
         }}
       />
 
       <motion.div
         className="relative container mx-auto px-6"
         animate={{
-          paddingTop: isScrolled ? '0.25rem' : '1.5rem',
-          paddingBottom: isScrolled ? '0.25rem' : '1.5rem'
+          paddingTop: isScrolled ? "0.25rem" : "1.5rem",
+          paddingBottom: isScrolled ? "0.25rem" : "1.5rem",
         }}
         transition={{
           duration: hasInitialized ? 0.3 : 0,
-          ease: [0.4, 0, 0.2, 1]
+          ease: [0.4, 0, 0.2, 1],
         }}
         style={{
-          willChange: 'padding',
-          paddingTop: isScrolled ? '0.25rem' : '1.5rem',
-          paddingBottom: isScrolled ? '0.25rem' : '1.5rem'
+          willChange: "padding",
+          paddingTop: isScrolled ? "0.25rem" : "1.5rem",
+          paddingBottom: isScrolled ? "0.25rem" : "1.5rem",
         }}
       >
         <div className="flex items-center justify-between">
@@ -92,19 +92,19 @@ export function Header() {
               alt="Atsomnium Partners Logo"
               className="w-auto"
               animate={{
-                height: isScrolled ? '40px' : '100px',
-                minHeight: isScrolled ? '40px' : '100px',
-                marginLeft: isScrolled ? '0%' : '10%'
+                height: isScrolled ? "40px" : "100px",
+                minHeight: isScrolled ? "40px" : "100px",
+                marginLeft: isScrolled ? "0%" : "10%",
               }}
               transition={{
                 duration: hasInitialized ? 0.3 : 0,
-                ease: [0.4, 0, 0.2, 1]
+                ease: [0.4, 0, 0.2, 1],
               }}
               style={{
-                willChange: 'height, margin',
-                height: isScrolled ? '40px' : '100px',
-                minHeight: isScrolled ? '40px' : '100px',
-                marginLeft: isScrolled ? '0%' : '10%'
+                willChange: "height, margin",
+                height: isScrolled ? "40px" : "100px",
+                minHeight: isScrolled ? "40px" : "100px",
+                marginLeft: isScrolled ? "0%" : "10%",
               }}
               whileHover={{
                 scale: isScrolled ? 1.05 : 1.1,
@@ -112,8 +112,8 @@ export function Header() {
                   type: "spring",
                   stiffness: 400,
                   damping: 10,
-                  duration: 0.3
-                }
+                  duration: 0.3,
+                },
               }}
               whileTap={{ scale: 0.95 }}
             />
@@ -123,17 +123,17 @@ export function Header() {
           <motion.nav
             className="hidden md:flex items-center"
             animate={{
-              gap: isScrolled ? '2rem' : '34%',
-              margin: isScrolled ? '0' : '5% 15% 5% 5%'
+              gap: isScrolled ? "2rem" : "34%",
+              margin: isScrolled ? "0" : "5% 15% 5% 5%",
             }}
             transition={{
               duration: hasInitialized ? 0.3 : 0,
-              ease: [0.4, 0, 0.2, 1]
+              ease: [0.4, 0, 0.2, 1],
             }}
             style={{
-              willChange: 'gap, margin',
-              gap: isScrolled ? '2rem' : '34%',
-              margin: isScrolled ? '0' : '5% 15% 5% 5%'
+              willChange: "gap, margin",
+              gap: isScrolled ? "2rem" : "34%",
+              margin: isScrolled ? "0" : "5% 15% 5% 5%",
             }}
           >
             <motion.a
@@ -145,8 +145,8 @@ export function Header() {
                   type: "spring",
                   stiffness: 300,
                   damping: 15,
-                  duration: 0.2
-                }
+                  duration: 0.2,
+                },
               }}
               whileTap={{ scale: 0.98 }}
             >
@@ -161,8 +161,8 @@ export function Header() {
                   type: "spring",
                   stiffness: 300,
                   damping: 15,
-                  duration: 0.2
-                }
+                  duration: 0.2,
+                },
               }}
               whileTap={{ scale: 0.98 }}
             >
@@ -177,8 +177,8 @@ export function Header() {
                   type: "spring",
                   stiffness: 300,
                   damping: 15,
-                  duration: 0.2
-                }
+                  duration: 0.2,
+                },
               }}
               whileTap={{ scale: 0.98 }}
             >
@@ -191,10 +191,34 @@ export function Header() {
             className="md:hidden text-black"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M3 12H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M3 6H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              <path d="M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M3 12H21"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3 6H21"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d="M3 18H21"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </button>
         </div>
@@ -213,8 +237,8 @@ export function Header() {
                     type: "spring",
                     stiffness: 300,
                     damping: 15,
-                    duration: 0.2
-                  }
+                    duration: 0.2,
+                  },
                 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -230,8 +254,8 @@ export function Header() {
                     type: "spring",
                     stiffness: 300,
                     damping: 15,
-                    duration: 0.2
-                  }
+                    duration: 0.2,
+                  },
                 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -247,8 +271,8 @@ export function Header() {
                     type: "spring",
                     stiffness: 300,
                     damping: 15,
-                    duration: 0.2
-                  }
+                    duration: 0.2,
+                  },
                 }}
                 whileTap={{ scale: 0.98 }}
               >
