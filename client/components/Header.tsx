@@ -122,13 +122,19 @@ export function Header() {
           {/* Desktop Navigation */}
           <motion.nav
             className="hidden md:flex items-center"
-            initial={{ gap: '34%', margin: '5% 15% 5% 5%' }}
             animate={{
               gap: isScrolled ? '2rem' : '34%',
               margin: isScrolled ? '0' : '5% 15% 5% 5%'
             }}
-            transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-            style={{ willChange: 'gap, margin' }}
+            transition={{
+              duration: hasInitialized ? 0.3 : 0,
+              ease: [0.4, 0, 0.2, 1]
+            }}
+            style={{
+              willChange: 'gap, margin',
+              gap: isScrolled ? '2rem' : '34%',
+              margin: isScrolled ? '0' : '5% 15% 5% 5%'
+            }}
           >
             <motion.a
               href="#about"
