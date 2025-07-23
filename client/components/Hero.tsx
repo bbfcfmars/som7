@@ -53,10 +53,10 @@ export function Hero() {
       </div>
 
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
+      <div className="absolute inset-0 bg-black/50 z-10 m-auto"></div>
 
       {/* Content */}
-      <div className="relative z-20 text-center px-6">
+      <div className="relative z-20 text-center flex flex-col m-auto">
         <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight mb-6 max-w-5xl">
           Redefining Gaming Excellence
         </h1>
