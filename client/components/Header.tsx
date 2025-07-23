@@ -93,7 +93,7 @@ export function Header() {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <button onClick={scrollToTop} className="flex items-center cursor-pointer">
             <motion.img
               src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
               alt="Atsomnium Partners Logo"
@@ -124,7 +124,7 @@ export function Header() {
               }}
               whileTap={{ scale: 0.95 }}
             />
-          </Link>
+          </button>
 
           {/* Desktop Navigation */}
           <motion.nav
