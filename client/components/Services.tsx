@@ -73,8 +73,12 @@ export function Services() {
             {services.map((service, index) => (
               <div key={index} className="space-y-6">
                 {/* Service Icon */}
-                <div className="w-24 h-24 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center text-4xl shadow-lg">
-                  {service.icon}
+                <div className="w-24 h-24 bg-white/10 backdrop-blur-sm rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
+                  <img
+                    src={service.icon}
+                    alt={service.title}
+                    className="w-12 h-12 object-contain"
+                  />
                 </div>
                 
                 {/* Service Content */}
