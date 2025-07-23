@@ -25,17 +25,17 @@ export function Services() {
 
   const services = [
     {
-      icon: "👥",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F1582478bc59e4c27a65f5bd169896e95?format=webp&width=800",
       title: "Business Consulting & Operations",
       description: "Strategic guidance for gaming operations, from start-up to scale. We optimize your business processes and operational efficiency."
     },
     {
-      icon: "⚙️",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F759d6eaad849448e950550e8971aa85b?format=webp&width=800",
       title: "Technology Solutions",
       description: "Custom hardware and software platform development designed specifically for gaming operations and regulatory compliance."
     },
     {
-      icon: "📊",
+      icon: "https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F41d67d4b34aa4b5eb78690d14cdf4a2b?format=webp&width=800",
       title: "Loyalty Programs & Marketing",
       description: "Comprehensive marketing strategies and brand development to establish your gaming business in competitive markets."
     }
