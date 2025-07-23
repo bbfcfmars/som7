@@ -48,10 +48,12 @@ export function Services() {
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/5cda82c1be304edcc317307f8087d923078c83ad?width=2920"
           alt="Gaming background"
-          className="w-full min-h-full object-cover object-center absolute inset-0"
+          className="w-full object-cover object-center absolute"
           style={{
-            height: 'calc(100% + 200px)',
-            transform: `translateY(${Math.max(-100, scrollY * 0.36 - 100)}px)`,
+            height: '150%',
+            top: '-25%',
+            left: '0',
+            transform: `translateY(${Math.min(100, Math.max(-100, scrollY * 0.15))}px)`,
             willChange: 'transform'
           }}
         />
