@@ -1,0 +1,19 @@
+{
+  "projectId": "prj_KwYAKRKVi5cXrfoMmxE6465wRHf4",
+  "orgId": "team_qPmZL0Jw1zEgTFVTpYkLOGKf",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist/spa"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ]
+}
