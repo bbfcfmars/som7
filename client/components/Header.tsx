@@ -7,6 +7,13 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasInitialized, setHasInitialized] = useState(false);
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   useEffect(() => {
     // Set initial state based on current scroll position
     const initialScrolled = window.scrollY > 10;
