@@ -14,9 +14,12 @@ export function Hero() {
           Where operational expertise meets cutting-edge innovation.
         </p>
         
-        <button className="inline-flex items-center justify-center px-12 py-4 border-2 border-white rounded-full text-white font-poppins text-xl hover:bg-white hover:text-black transition-all duration-300">
+        <a
+          href="#about"
+          className="inline-flex items-center justify-center px-12 py-4 border-2 border-white rounded-full text-white font-poppins text-xl hover:bg-white hover:text-black transition-all duration-300"
+        >
           Learn More
-        </button>
+        </a>
       </div>
       
       {/* Gaming-themed background elements */}
