@@ -12,7 +12,7 @@ export function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <motion.img
-              src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2Faad35c53b4b247959013dec243b13c5a?format=webp&width=800"
+              src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F1ce67e3496004f8db2a91a50931ea0dc?format=webp&width=800"
               alt="Atsomnium Partners Logo"
               className="min-h-[100px] h-[100px] w-auto"
               whileHover={{
