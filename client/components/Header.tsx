@@ -30,8 +30,15 @@ export function Header() {
     if (isHomePage) {
       scrollToSection(sectionId);
     } else {
-      // Navigate to home page with hash
-      window.location.href = `/#${sectionId}`;
+      // Navigate to home page, then scroll to section after navigation
+      navigate('/');
+      // Use setTimeout to ensure navigation completes before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
   };
 
