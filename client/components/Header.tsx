@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -10,12 +11,21 @@ export function Header() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="bg-white p-3 rounded">
-              <div className="font-manrope font-bold text-black text-xl">
-                ATSOMNIUM
-                <div className="text-xs font-normal tracking-wider">PARTNERS</div>
-              </div>
-            </div>
+            <motion.img
+              src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2Faad35c53b4b247959013dec243b13c5a?format=webp&width=800"
+              alt="Atsomnium Partners Logo"
+              className="min-h-[100px] h-[100px] w-auto"
+              whileHover={{
+                scale: 1.1,
+                transition: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                  duration: 0.3
+                }
+              }}
+              whileTap={{ scale: 0.95 }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
