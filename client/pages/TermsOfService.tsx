@@ -174,7 +174,7 @@ export default function TermsOfService() {
                 </p>
               </div>
 
-              <div className="bg-section-light p-8 rounded-lg border border-border">
+              <div className="bg-section-light p-8 rounded-lg">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   Contact Information
                 </h2>
