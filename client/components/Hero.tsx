@@ -57,11 +57,11 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-20 text-center flex flex-col m-auto">
-        <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight mb-6 max-w-5xl">
+        <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight m-auto mb-6">
           Redefining Gaming Excellence
         </h1>
 
-        <p className="font-poppins text-white text-2xl md:text-3xl mb-12 max-w-4xl">
+        <p className="font-poppins text-white text-2xl md:text-3xl max-w-[996px] m-auto mb-12">
           Where operational expertise meets cutting-edge innovation.
         </p>
 
