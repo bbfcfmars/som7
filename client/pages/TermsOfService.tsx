@@ -37,7 +37,7 @@ export default function TermsOfService() {
           <div className="container mx-auto max-w-4xl">
             <div className="prose prose-lg max-w-none">
               
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   1. Acceptance of Terms
                 </h2>
@@ -50,7 +50,7 @@ export default function TermsOfService() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   2. Services Description
                 </h2>
@@ -66,7 +66,7 @@ export default function TermsOfService() {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   3. Client Responsibilities
                 </h2>
@@ -81,7 +81,7 @@ export default function TermsOfService() {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   4. Confidentiality
                 </h2>
@@ -95,7 +95,7 @@ export default function TermsOfService() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   5. Payment Terms
                 </h2>
@@ -110,7 +110,7 @@ export default function TermsOfService() {
                 </ul>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   6. Intellectual Property
                 </h2>
@@ -124,7 +124,7 @@ export default function TermsOfService() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   7. Limitation of Liability
                 </h2>
@@ -138,7 +138,7 @@ export default function TermsOfService() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   8. Termination
                 </h2>
@@ -151,7 +151,7 @@ export default function TermsOfService() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   9. Governing Law
                 </h2>
@@ -161,7 +161,7 @@ export default function TermsOfService() {
                 </p>
               </div>
 
-              <div className="bg-white p-8 rounded-lg shadow-sm border border-border mb-8">
+              <div className="bg-white p-8 rounded-lg shadow-sm mb-8">
                 <h2 className="text-2xl font-manrope font-semibold text-foreground mb-4">
                   10. Changes to Terms
                 </h2>
