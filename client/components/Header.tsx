@@ -51,15 +51,15 @@ export function Header() {
             <motion.img
               src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
               alt="Atsomnium Partners Logo"
-              className="w-auto ml-[10%]"
+              className="w-auto"
               animate={{
-                height: isScrolled ? '60px' : '100px',
-                minHeight: isScrolled ? '60px' : '100px',
-                transform: isScrolled ? 'translateX(-5%) scale(0.85)' : 'translateX(0%) scale(1)'
+                height: isScrolled ? '40px' : '100px',
+                minHeight: isScrolled ? '40px' : '100px',
+                marginLeft: isScrolled ? '0%' : '10%'
               }}
               transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
               whileHover={{
-                scale: isScrolled ? 0.95 : 1.1,
+                scale: isScrolled ? 1.05 : 1.1,
                 transition: {
                   type: "spring",
                   stiffness: 400,
