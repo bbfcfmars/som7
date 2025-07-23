@@ -33,24 +33,57 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a
+            <motion.a
               href="#about"
-              className="text-black font-poppins text-lg hover:text-gray-600 transition-colors"
+              className="text-black font-poppins text-lg transition-colors"
+              whileHover={{
+                scale: 1.05,
+                color: "hsl(267, 73%, 57%)",
+                transition: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 15,
+                  duration: 0.2
+                }
+              }}
+              whileTap={{ scale: 0.98 }}
             >
               About
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#services"
-              className="text-black font-poppins text-lg hover:text-gray-600 transition-colors"
+              className="text-black font-poppins text-lg transition-colors"
+              whileHover={{
+                scale: 1.05,
+                color: "hsl(267, 73%, 57%)",
+                transition: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 15,
+                  duration: 0.2
+                }
+              }}
+              whileTap={{ scale: 0.98 }}
             >
               Services
-            </a>
-            <a
+            </motion.a>
+            <motion.a
               href="#contact"
-              className="text-black font-poppins text-lg hover:text-gray-600 transition-colors"
+              className="text-black font-poppins text-lg transition-colors"
+              whileHover={{
+                scale: 1.05,
+                color: "hsl(267, 73%, 57%)",
+                transition: {
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 15,
+                  duration: 0.2
+                }
+              }}
+              whileTap={{ scale: 0.98 }}
             >
               Contact
-            </a>
+            </motion.a>
           </nav>
 
           {/* Mobile menu button */}
