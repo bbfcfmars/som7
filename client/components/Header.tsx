@@ -35,10 +35,9 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <motion.a
               href="#about"
-              className="text-black font-poppins text-lg transition-colors"
+              className="text-black hover:text-primary font-poppins text-lg transition-colors"
               whileHover={{
                 scale: 1.05,
-                color: "hsl(267, 73%, 57%)",
                 transition: {
                   type: "spring",
                   stiffness: 300,
@@ -52,10 +51,9 @@ export function Header() {
             </motion.a>
             <motion.a
               href="#services"
-              className="text-black font-poppins text-lg transition-colors"
+              className="text-black hover:text-primary font-poppins text-lg transition-colors"
               whileHover={{
                 scale: 1.05,
-                color: "hsl(267, 73%, 57%)",
                 transition: {
                   type: "spring",
                   stiffness: 300,
@@ -69,10 +67,9 @@ export function Header() {
             </motion.a>
             <motion.a
               href="#contact"
-              className="text-black font-poppins text-lg transition-colors"
+              className="text-black hover:text-primary font-poppins text-lg transition-colors"
               whileHover={{
                 scale: 1.05,
-                color: "hsl(267, 73%, 57%)",
                 transition: {
                   type: "spring",
                   stiffness: 300,
