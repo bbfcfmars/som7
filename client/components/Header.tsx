@@ -1,25 +1,50 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY > 10;
+      setIsScrolled(scrolled);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <header className="absolute top-0 left-0 right-0 z-50">
-      {/* White background with feathering gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-transparent"></div>
-
-      <div className="relative container mx-auto px-6 py-6">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out ${
+      isScrolled
+        ? 'bg-white/85 backdrop-blur-md shadow-lg'
+        : 'bg-gradient-to-b from-white via-white/95 to-transparent'
+    }`}>
+      <motion.div
+        className="relative container mx-auto px-6"
+        animate={{
+          paddingTop: isScrolled ? '0.5rem' : '1.5rem',
+          paddingBottom: isScrolled ? '0.5rem' : '1.5rem'
+        }}
+        transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+      >
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <motion.img
               src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
               alt="Atsomnium Partners Logo"
-              className="min-h-[100px] h-[100px] w-auto ml-[10%]"
+              className="w-auto ml-[10%]"
+              animate={{
+                height: isScrolled ? '60px' : '100px',
+                minHeight: isScrolled ? '60px' : '100px',
+                transform: isScrolled ? 'translateX(-5%) scale(0.85)' : 'translateX(0%) scale(1)'
+              }}
+              transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
               whileHover={{
-                scale: 1.1,
+                scale: isScrolled ? 0.95 : 1.1,
                 transition: {
                   type: "spring",
                   stiffness: 400,
@@ -32,7 +57,13 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex justify-center gap-[34%] flex-row w-auto flex-grow-0 items-center m-[5%_15%_5%_5%]">
+          <motion.nav
+            className="hidden md:flex justify-center gap-[34%] flex-row w-auto flex-grow-0 items-center m-[5%_15%_5%_5%]"
+            animate={{
+              transform: isScrolled ? 'translateX(5%) scale(0.85)' : 'translateX(0%) scale(1)'
+            }}
+            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
+          >
             <motion.a
               href="#about"
               className="text-black hover:text-primary font-poppins text-lg transition-colors"
@@ -81,7 +112,7 @@ export function Header() {
             >
               Contact
             </motion.a>
-          </nav>
+          </motion.nav>
 
           {/* Mobile menu button */}
           <button
@@ -154,7 +185,7 @@ export function Header() {
             </div>
           </nav>
         )}
-      </div>
+      </motion.div>
     </header>
   );
 }
