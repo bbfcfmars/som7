@@ -7,9 +7,17 @@ export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrolled = window.scrollY > 10;
-      setIsScrolled(scrolled);
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const scrolled = window.scrollY > 10;
+          setIsScrolled(scrolled);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
