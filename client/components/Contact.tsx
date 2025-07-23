@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 export function Contact() {
   return (
     <section id="contact" className="py-20 bg-section-light">
