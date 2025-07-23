@@ -103,27 +103,60 @@ export function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-black/20">
             <div className="flex flex-col space-y-4 pt-4">
-              <a
+              <motion.a
                 href="#about"
-                className="text-black font-poppins text-lg hover:text-gray-600 transition-colors"
+                className="text-black font-poppins text-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
+                whileHover={{
+                  scale: 1.05,
+                  color: "hsl(267, 73%, 57%)",
+                  transition: {
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 15,
+                    duration: 0.2
+                  }
+                }}
+                whileTap={{ scale: 0.98 }}
               >
                 About
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="#services"
-                className="text-black font-poppins text-lg hover:text-gray-600 transition-colors"
+                className="text-black font-poppins text-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
+                whileHover={{
+                  scale: 1.05,
+                  color: "hsl(267, 73%, 57%)",
+                  transition: {
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 15,
+                    duration: 0.2
+                  }
+                }}
+                whileTap={{ scale: 0.98 }}
               >
                 Services
-              </a>
-              <a
+              </motion.a>
+              <motion.a
                 href="#contact"
-                className="text-black font-poppins text-lg hover:text-gray-600 transition-colors"
+                className="text-black font-poppins text-lg transition-colors"
                 onClick={() => setIsMenuOpen(false)}
+                whileHover={{
+                  scale: 1.05,
+                  color: "hsl(267, 73%, 57%)",
+                  transition: {
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 15,
+                    duration: 0.2
+                  }
+                }}
+                whileTap={{ scale: 0.98 }}
               >
                 Contact
-              </a>
+              </motion.a>
             </div>
           </nav>
         )}
