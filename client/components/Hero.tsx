@@ -67,7 +67,7 @@ export function Hero() {
 
         <motion.a
           href="#about"
-          className="inline-flex items-center justify-center px-12 py-4 border-2 border-white bg-transparent rounded-full text-white font-poppins text-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 shadow-lg"
+          className="inline-flex items-center justify-center px-12 py-4 border-2 border-white bg-transparent rounded-full text-white font-poppins text-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 shadow-lg max-w-[250px] m-auto"
           whileHover={{
             scale: 1.05,
             transition: {
