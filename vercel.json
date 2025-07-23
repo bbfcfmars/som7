@@ -8,11 +8,10 @@
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ]
+   "routes": [                                                                   
+    {                                                                           
+      "src": "/(.*)",                                                           
+      "dest": "/dist/node-build.mjs"                                            
+    }                                                                           
+  ]                        
 }
-
