@@ -1,27 +1,50 @@
+import { motion } from "framer-motion";
+
 export function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer className="relative h-[200px] overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img 
+        <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/ccab0965b657b88865bf548ef703abd1c05bee4e?width=3824"
           alt="Gaming setup background"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
       </div>
-      
+
       {/* Content */}
       <div className="relative z-10 h-full flex items-center">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
             {/* Logo */}
-            <div className="bg-white p-4 rounded">
-              <div className="font-manrope font-bold text-black text-xl">
-                ATSOMNIUM
-                <div className="text-xs font-normal tracking-wider">PARTNERS</div>
-              </div>
-            </div>
+            <motion.button
+              onClick={scrollToTop}
+              className="cursor-pointer"
+              whileHover={{
+                scale: 1.1,
+                transition: {
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                  duration: 0.3
+                }
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <img
+                src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2Faad35c53b4b247959013dec243b13c5a?format=webp&width=800"
+                alt="Atsomnium Partners Logo - Scroll to Top"
+                className="h-16 w-auto"
+              />
+            </motion.button>
             
             {/* Contact Info */}
             <div className="text-center md:text-left space-y-2">
