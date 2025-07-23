@@ -55,7 +55,7 @@ export function Hero() {
       </div>
 
       {/* Dark overlay for text readability */}
-      <div className="absolute inset-0 bg-black/50 z-10 m-auto"></div>
+      <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       {/* Content */}
       <div className="relative z-20 text-center flex flex-col m-auto">
