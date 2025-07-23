@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export function Footer() {
   const scrollToTop = () => {
@@ -98,13 +99,19 @@ export function Footer() {
 
             {/* Footer Links */}
             <div className="flex items-center space-x-4 text-white text-sm">
-              <a href="#" className="hover:text-primary transition-colors">
+              <Link
+                to="/privacy-policy"
+                className="hover:text-primary transition-colors"
+              >
                 Privacy Policy
-              </a>
+              </Link>
               <span>|</span>
-              <a href="#" className="hover:text-primary transition-colors">
+              <Link
+                to="/terms-of-service"
+                className="hover:text-primary transition-colors"
+              >
                 Terms of Service
-              </a>
+              </Link>
               <span>|</span>
               <span>All Rights Reserved ©2025</span>
             </div>

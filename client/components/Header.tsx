@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
@@ -6,12 +6,40 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [hasInitialized, setHasInitialized] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === "/";
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: "smooth",
     });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    if (isHomePage) {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
+  const handleNavClick = (sectionId: string) => {
+    if (isHomePage) {
+      scrollToSection(sectionId);
+    } else {
+      // Navigate to home page, then scroll to section after navigation
+      navigate("/");
+      // Use setTimeout to ensure navigation completes before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100);
+    }
   };
 
   useEffect(() => {
@@ -93,10 +121,7 @@ export function Header() {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <button
-            onClick={scrollToTop}
-            className="flex items-center cursor-pointer"
-          >
+          <Link to="/" className="flex items-center cursor-pointer">
             <motion.img
               src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
               alt="Atsomnium Partners Logo"
@@ -127,7 +152,7 @@ export function Header() {
               }}
               whileTap={{ scale: 0.95 }}
             />
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <motion.nav
@@ -146,9 +171,9 @@ export function Header() {
               margin: isScrolled ? "0" : "5% 15% 5% 5%",
             }}
           >
-            <motion.a
-              href="#about"
-              className="text-black hover:text-primary font-poppins text-lg transition-colors"
+            <motion.button
+              onClick={() => handleNavClick("about")}
+              className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
                 transition: {
@@ -161,10 +186,10 @@ export function Header() {
               whileTap={{ scale: 0.98 }}
             >
               About
-            </motion.a>
-            <motion.a
-              href="#services"
-              className="text-black hover:text-primary font-poppins text-lg transition-colors"
+            </motion.button>
+            <motion.button
+              onClick={() => handleNavClick("services")}
+              className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
                 transition: {
@@ -177,10 +202,10 @@ export function Header() {
               whileTap={{ scale: 0.98 }}
             >
               Services
-            </motion.a>
-            <motion.a
-              href="#contact"
-              className="text-black hover:text-primary font-poppins text-lg transition-colors"
+            </motion.button>
+            <motion.button
+              onClick={() => handleNavClick("contact")}
+              className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
                 transition: {
@@ -193,7 +218,7 @@ export function Header() {
               whileTap={{ scale: 0.98 }}
             >
               Contact
-            </motion.a>
+            </motion.button>
           </motion.nav>
 
           {/* Mobile menu button */}
@@ -237,10 +262,12 @@ export function Header() {
         {isMenuOpen && (
           <nav className="md:hidden mt-4 pb-4 border-t border-black/20">
             <div className="flex flex-col space-y-4 pt-4">
-              <motion.a
-                href="#about"
-                className="text-black hover:text-primary font-poppins text-lg transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              <motion.button
+                onClick={() => {
+                  handleNavClick("about");
+                  setIsMenuOpen(false);
+                }}
+                className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   transition: {
@@ -253,11 +280,13 @@ export function Header() {
                 whileTap={{ scale: 0.98 }}
               >
                 About
-              </motion.a>
-              <motion.a
-                href="#services"
-                className="text-black hover:text-primary font-poppins text-lg transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              </motion.button>
+              <motion.button
+                onClick={() => {
+                  handleNavClick("services");
+                  setIsMenuOpen(false);
+                }}
+                className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   transition: {
@@ -270,11 +299,13 @@ export function Header() {
                 whileTap={{ scale: 0.98 }}
               >
                 Services
-              </motion.a>
-              <motion.a
-                href="#contact"
-                className="text-black hover:text-primary font-poppins text-lg transition-colors"
-                onClick={() => setIsMenuOpen(false)}
+              </motion.button>
+              <motion.button
+                onClick={() => {
+                  handleNavClick("contact");
+                  setIsMenuOpen(false);
+                }}
+                className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   transition: {
@@ -287,7 +318,7 @@ export function Header() {
                 whileTap={{ scale: 0.98 }}
               >
                 Contact
-              </motion.a>
+              </motion.button>
             </div>
           </nav>
         )}

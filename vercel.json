@@ -4,6 +4,7 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
+<<<<<<< HEAD
         "distDir": "dist"
       }
     }
@@ -14,4 +15,16 @@
       "dest": "/index.html"
     }
   ]
+=======
+        "distDir": "dist/spa"
+      }
+    }
+  ],
+   "routes": [                                                                   
+    {                                                                           
+      "src": "/(.*)",                                                           
+      "dest": "/dist/node-build.mjs"                                            
+    }                                                                           
+  ]                        
+>>>>>>> f6f934b75d3c2c00f68b3772fcd0b59739d862f7
 }
