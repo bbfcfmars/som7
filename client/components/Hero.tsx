@@ -21,9 +21,15 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full flex items-center justify-center overflow-hidden" style={{ height: '100vh', minHeight: '100vh' }}>
+    <section
+      className="relative w-full flex items-center justify-center overflow-hidden"
+      style={{ height: "100vh", minHeight: "100vh" }}
+    >
       {/* Full-bleed Video Background */}
-      <div className="absolute inset-0 w-full h-full" style={{ height: '100%', minHeight: '100vh' }}>
+      <div
+        className="absolute inset-0 w-full h-full"
+        style={{ height: "100%", minHeight: "100vh" }}
+      >
         <div
           style={{
             position: "absolute",
