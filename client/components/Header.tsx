@@ -35,24 +35,37 @@ export function Header() {
       {/* Gradient Background */}
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-transparent"
-        initial={{ height: '100%', opacity: 1 }}
         animate={{
           height: isScrolled ? '50%' : '100%',
           opacity: isScrolled ? 0.9 : 1
         }}
-        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-        style={{ willChange: 'height, opacity' }}
+        transition={{
+          duration: hasInitialized ? 0.3 : 0,
+          ease: [0.4, 0, 0.2, 1],
+          height: { duration: hasInitialized ? 0.3 : 0 },
+          opacity: { duration: hasInitialized ? 0.3 : 0 }
+        }}
+        style={{
+          willChange: 'height, opacity',
+          height: isScrolled ? '50%' : '100%',
+          opacity: isScrolled ? 0.9 : 1
+        }}
       />
 
       {/* Clean white background when scrolled */}
       <motion.div
         className="absolute inset-0 bg-white shadow-sm border-b border-gray-100"
-        initial={{ opacity: 0 }}
         animate={{
           opacity: isScrolled ? 1 : 0
         }}
-        transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
-        style={{ willChange: 'opacity' }}
+        transition={{
+          duration: hasInitialized ? 0.3 : 0,
+          ease: [0.4, 0, 0.2, 1]
+        }}
+        style={{
+          willChange: 'opacity',
+          opacity: isScrolled ? 1 : 0
+        }}
       />
 
       <motion.div
