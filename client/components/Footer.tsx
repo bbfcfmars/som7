@@ -11,11 +11,11 @@ export function Footer() {
   return (
     <footer className="relative h-[200px] overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 flex flex-col">
         <img
           src="https://api.builder.io/api/v1/image/assets/TEMP/ccab0965b657b88865bf548ef703abd1c05bee4e?width=3824"
           alt="Gaming setup background"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover m-auto blur-sm"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-transparent"></div>
       </div>
