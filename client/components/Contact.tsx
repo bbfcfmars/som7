@@ -90,12 +90,22 @@ export function Contact() {
                 
                 {/* Submit Button */}
                 <div className="flex justify-end">
-                  <button
+                  <motion.button
                     type="submit"
                     className="px-8 py-3 bg-primary text-white font-poppins rounded hover:bg-primary/90 transition-colors"
+                    whileHover={{
+                      scale: 1.1,
+                      transition: {
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 10,
+                        duration: 0.3
+                      }
+                    }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Send Message
-                  </button>
+                  </motion.button>
                 </div>
               </form>
             </div>
