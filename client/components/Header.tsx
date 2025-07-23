@@ -17,7 +17,7 @@ export function Header() {
             <motion.img
               src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
               alt="Atsomnium Partners Logo"
-              className="min-h-[100px] h-[100px] w-auto"
+              className="min-h-[100px] h-[100px] w-auto ml-[10%]"
               whileHover={{
                 scale: 1.1,
                 transition: {
