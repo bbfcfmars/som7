@@ -65,12 +65,22 @@ export function Hero() {
           Where operational expertise meets cutting-edge innovation.
         </p>
 
-        <a
+        <motion.a
           href="#about"
-          className="inline-flex items-center justify-center px-12 py-4 border-2 border-white rounded-full text-white font-poppins text-xl hover:bg-white hover:text-black transition-all duration-300"
+          className="inline-flex items-center justify-center px-12 py-4 border-2 border-white bg-transparent rounded-full text-white font-poppins text-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 shadow-lg"
+          whileHover={{
+            scale: 1.05,
+            transition: {
+              type: "spring",
+              stiffness: 300,
+              damping: 15,
+              duration: 0.2
+            }
+          }}
+          whileTap={{ scale: 0.98 }}
         >
           Learn More
-        </a>
+        </motion.a>
       </div>
     </section>
   );
