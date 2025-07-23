@@ -8,7 +8,7 @@ export function Header() {
   const [hasInitialized, setHasInitialized] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHomePage = location.pathname === '/';
+  const isHomePage = location.pathname === "/";
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -21,7 +21,7 @@ export function Header() {
     if (isHomePage) {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
@@ -31,12 +31,12 @@ export function Header() {
       scrollToSection(sectionId);
     } else {
       // Navigate to home page, then scroll to section after navigation
-      navigate('/');
+      navigate("/");
       // Use setTimeout to ensure navigation completes before scrolling
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     }
@@ -121,10 +121,7 @@ export function Header() {
       >
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center cursor-pointer"
-          >
+          <Link to="/" className="flex items-center cursor-pointer">
             <motion.img
               src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
               alt="Atsomnium Partners Logo"
@@ -175,7 +172,7 @@ export function Header() {
             }}
           >
             <motion.button
-              onClick={() => handleNavClick('about')}
+              onClick={() => handleNavClick("about")}
               className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
@@ -191,7 +188,7 @@ export function Header() {
               About
             </motion.button>
             <motion.button
-              onClick={() => handleNavClick('services')}
+              onClick={() => handleNavClick("services")}
               className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
@@ -207,7 +204,7 @@ export function Header() {
               Services
             </motion.button>
             <motion.button
-              onClick={() => handleNavClick('contact')}
+              onClick={() => handleNavClick("contact")}
               className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
@@ -267,7 +264,7 @@ export function Header() {
             <div className="flex flex-col space-y-4 pt-4">
               <motion.button
                 onClick={() => {
-                  handleNavClick('about');
+                  handleNavClick("about");
                   setIsMenuOpen(false);
                 }}
                 className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
@@ -286,7 +283,7 @@ export function Header() {
               </motion.button>
               <motion.button
                 onClick={() => {
-                  handleNavClick('services');
+                  handleNavClick("services");
                   setIsMenuOpen(false);
                 }}
                 className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
@@ -305,7 +302,7 @@ export function Header() {
               </motion.button>
               <motion.button
                 onClick={() => {
-                  handleNavClick('contact');
+                  handleNavClick("contact");
                   setIsMenuOpen(false);
                 }}
                 className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
