@@ -2,24 +2,6 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 
 export function Hero() {
-  useEffect(() => {
-    // Load Vimeo Player API script
-    const script = document.createElement("script");
-    script.src = "https://player.vimeo.com/api/player.js";
-    script.async = true;
-    document.head.appendChild(script);
-
-    return () => {
-      // Cleanup script on unmount
-      const existingScript = document.querySelector(
-        'script[src="https://player.vimeo.com/api/player.js"]',
-      );
-      if (existingScript) {
-        document.head.removeChild(existingScript);
-      }
-    };
-  }, []);
-
   return (
     <section
       className="relative w-full flex items-center justify-center overflow-hidden"
@@ -36,18 +18,22 @@ export function Hero() {
           transform: "translateX(-50%)"
         }}
       >
-        <div
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
           style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
             width: "100vw",
             height: "100vh",
             minWidth: "100vw",
             minHeight: "100vh",
+            objectFit: "cover",
           }}
         >
+          <source src="/videos/hero-video.mp4" type="video/mp4" />
+          {/* Fallback to Vimeo if local video not available */}
           <iframe
             src="https://player.vimeo.com/video/1103273577?h=fb1328ca55&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0&title=0&byline=0&portrait=0&muted=1&background=1"
             frameBorder="0"
@@ -65,7 +51,7 @@ export function Hero() {
             }}
             title="hero-video"
           ></iframe>
-        </div>
+        </video>
       </div>
 
       {/* Dark overlay for text readability */}
