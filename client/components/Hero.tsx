@@ -1,21 +1,54 @@
+import { useEffect } from "react";
+
 export function Hero() {
+  useEffect(() => {
+    // Load Vimeo Player API script
+    const script = document.createElement("script");
+    script.src = "https://player.vimeo.com/api/player.js";
+    script.async = true;
+    document.head.appendChild(script);
+
+    return () => {
+      // Cleanup script on unmount
+      const existingScript = document.querySelector('script[src="https://player.vimeo.com/api/player.js"]');
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, []);
+
   return (
     <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
       {/* Full-bleed Video Background */}
       <div className="absolute inset-0 w-full h-full">
-        <iframe
-          src="https://player.vimeo.com/video/1103273577?autoplay=1&loop=1&muted=1&controls=0&background=1&h=fb1328ca55"
-          className="absolute top-0 left-0 w-full h-full object-cover"
+        <div
           style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
             width: '100vw',
             height: '100vh',
             minWidth: '100%',
-            minHeight: '100%',
-            transform: 'scale(1.02)', // Slight scale to ensure no edge gaps
+            minHeight: '100%'
           }}
-          frameBorder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-        ></iframe>
+        >
+          <iframe
+            src="https://player.vimeo.com/video/1103273577?h=fb1328ca55&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1"
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerPolicy="strict-origin-when-cross-origin"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover'
+            }}
+            title="hero-video"
+          ></iframe>
+        </div>
       </div>
 
       {/* Dark overlay for text readability */}
