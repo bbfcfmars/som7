@@ -4,8 +4,8 @@ export function About() {
       id="about"
       className="p-[5%_10%_10%] bg-section-light"
       style={{
-        boxShadow:
-          "0 30px 40px 0px rgba(0, 0, 0, 1), 0 20px 25px 0px rgba(0, 0, 0, 0.8)",
+        boxShadow: "21px 30px 50px 5px rgb(0, 0, 0)",
+        marginTop: "-1px",
       }}
     >
       <div className="container mx-auto px-6">
