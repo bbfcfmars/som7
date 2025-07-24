@@ -10,12 +10,12 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative h-[80px] overflow-hidden" style={{backgroundColor: "#222222"}}>   
+    <footer className="relative min-h-[80px] h-auto md:h-[80px] overflow-hidden" style={{backgroundColor: "#222222"}}>   
 
       {/* Content */}
-      <div className="relative z-10 flex h-full items-center" style={{ padding: "5%" }}>
+      <div className="relative z-10 flex h-full items-center py-4 px-4 md:p-[5%]">
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
             {/* Logo */}
             <motion.button
               onClick={scrollToTop}
@@ -36,12 +36,12 @@ export function Footer() {
                 alt="Atsomnium Partners Logo - Scroll to Top"
                 className="h-auto w-auto"
                 style={{ height: "59px" }}
-                className="ml-auto mb-10 md:mb-10"
+                className="mx-auto md:ml-auto mb-4 md:mb-10"
               />
             </motion.button>
 
             {/* Contact Info */}
-            <div className="flex flex-col space-y-2 text-white text-sm items-start justify-center mx-auto mb-7 ml-4 md:ml-10">
+            <div className="flex flex-col space-y-2 text-white text-sm items-center md:items-start justify-center mx-auto md:mx-0 mb-4 md:mb-7 md:ml-10">
               <div className="flex items-center space-x-2">
                 <svg
                   width="16"
@@ -88,7 +88,7 @@ export function Footer() {
             </div>
 
             {/* Footer Links */}
-            <div className="flex items-end space-x-3 text-white text-xs self-end">
+            <div className="flex items-center md:items-end space-x-2 md:space-x-3 text-white text-xs text-center md:text-left flex-wrap justify-center md:justify-start">
               <Link
                 to="/privacy-policy"
                 className="hover:text-primary transition-colors"
