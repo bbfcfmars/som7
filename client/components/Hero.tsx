@@ -23,7 +23,7 @@ export function Hero() {
   return (
     <section
       className="relative w-full flex items-center justify-center overflow-hidden"
-      style={{ height: "100vh", minHeight: "100vh" }}
+      style={{ height: "100vh", minHeight: "100vh", marginBottom: "-1px" }}
     >
       {/* Full-bleed Video Background */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
