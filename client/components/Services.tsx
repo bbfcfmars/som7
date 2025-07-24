@@ -70,7 +70,7 @@ export function Services() {
   ];
 
   return (
-    <section ref={sectionRef} id="services" className="relative py-20 overflow-hidden">
+    <section ref={sectionRef} id="services" className="relative py-12 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 overflow-hidden">
         <img
