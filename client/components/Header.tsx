@@ -33,8 +33,7 @@ export function Header() {
   }, []);
 
   // Calculate dynamic styles based on scroll progress
-  const headerOpacity = 0.9 + (0.1 * scrollProgress); // 0.9 to 1.0
-  const borderOpacity = scrollProgress; // 0 to 1
+  const borderOpacity = scrollProgress * 0.3; // 0 to 0.3 (subtle border)
   const shadowOpacity = scrollProgress * 0.1; // 0 to 0.1
   const paddingY = 12 - (8 * scrollProgress); // 12px to 4px (py-3 to py-1)
   const logoHeight = 80 - (40 * scrollProgress); // 80px to 40px (h-20 to h-10)
@@ -42,16 +41,23 @@ export function Header() {
   const navGap = 56 - (24 * scrollProgress); // 56px to 32px (gap-14 to gap-8)
   const navMarginRight = 15 - (15 * scrollProgress); // 15% to 0%
 
+  // Create progressive gradient transition
+  const gradientOpacity = Math.max(0, 1 - (scrollProgress * 2)); // Fade out over first 50% of scroll
+  const solidOpacity = Math.min(0.95, 0.85 + (scrollProgress * 0.1)); // Fade in gradually
+
+  // Combine gradient and solid backgrounds
+  const backgroundStyle = scrollProgress < 0.5
+    ? `linear-gradient(to bottom, white, rgba(255, 255, 255, 0.95), transparent)`
+    : `rgba(255, 255, 255, ${solidOpacity})`;
+
   return (
-    <header 
+    <header
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: scrollProgress > 0 
-          ? `rgba(255, 255, 255, ${headerOpacity})` 
-          : 'linear-gradient(to bottom, white, rgba(255, 255, 255, 0.95), transparent)',
-        backdropFilter: scrollProgress > 0.1 ? 'blur(4px)' : 'none',
-        borderBottom: `1px solid rgba(229, 231, 235, ${borderOpacity})`,
-        boxShadow: `0 1px 3px 0 rgba(0, 0, 0, ${shadowOpacity})`,
+        background: backgroundStyle,
+        backdropFilter: scrollProgress > 0.3 ? `blur(${scrollProgress * 4}px)` : 'none',
+        borderBottom: borderOpacity > 0.05 ? `1px solid rgba(229, 231, 235, ${borderOpacity})` : 'none',
+        boxShadow: shadowOpacity > 0.02 ? `0 1px 3px 0 rgba(0, 0, 0, ${shadowOpacity})` : 'none',
         paddingTop: `${paddingY}px`,
         paddingBottom: `${paddingY}px`,
       }}
