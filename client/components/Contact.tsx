@@ -19,16 +19,7 @@ export function Contact() {
 
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Company Info */}
-            <div className="space-y-8">
-              {/* Contact Image */}
-              <div className="relative">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/e4dbd7ba29b50a83816f97dc7202b11d3804a693?width=570"
-                  alt="Atsomnium Partners office"
-                  className="w-full h-[200px] object-cover rounded-3xl shadow-lg"
-                />
-              </div>
-
+            <div className="space-y-8 -mt-8 md:-mt-8">
               {/* Company Details */}
               <div className="space-y-4">
                 <h3 className="font-manrope font-bold text-black text-xl">
@@ -152,8 +143,8 @@ export function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="space-y-6">
-              <form className="space-y-4">
+            <div className="space-y-6 w-auto self-center lg:-ml-0.5">
+              <form className="space-y-4 w-full max-w-lg lg:max-w-xl xl:w-[532px] lg:-ml-16 xl:-ml-[108px] self-start">
                 {/* First and Last Name Row */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <input
