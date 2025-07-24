@@ -19,7 +19,10 @@ const App = () => (
 );
 
 const container = document.getElementById("root")!;
-if (!container._reactRootContainer) {
-  const root = createRoot(container);
-  root.render(<App />);
+
+// Store root instance globally to prevent multiple creation
+if (!(window as any).__reactRoot) {
+  (window as any).__reactRoot = createRoot(container);
 }
+
+(window as any).__reactRoot.render(<App />);
