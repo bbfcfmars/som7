@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Atsomnium Partners Design System
+   * Custom HSL color variables for gaming consultancy brand
+   */
+  :root {
+    /* Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    /* Gaming Brand Purple */
+    --primary: 267 73% 57%; /* #9333EA */
+    --primary-foreground: 0 0% 100%;
+
+    /* Light Gray/Purple Background */
+    --section-light: 267 17% 91%; /* #E7E5ED */
+    --section-light-foreground: 0 0% 0%;
+
+    /* Dark Gaming Background */
+    --gaming-dark: 0 0% 0%;
+    --gaming-dark-foreground: 0 0% 100%;
+
+    /* Form Elements */
+    --input: 220 13% 82%; /* #D1D5DB */
+    --input-foreground: 215 4% 58%; /* #949494 */
+
+    /* Neutral Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --secondary: 267 17% 91%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 220 13% 82%;
+    --muted-foreground: 215 4% 58%;
+
+    --accent: 267 73% 57%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 82%;
+    --ring: 267 73% 57%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Poppins", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Manrope", sans-serif;
+  }
+}
