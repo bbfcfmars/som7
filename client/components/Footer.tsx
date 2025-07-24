@@ -10,7 +10,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative h-[200px] overflow-hidden bg-gray-700">   
+    <footer className="relative h-[150px] overflow-hidden" style={{backgroundColor: "#222222"}}>   
 
       {/* Content */}
       <div
