@@ -1,17 +1,20 @@
 {
+  "version": 2,
+  "buildCommand": "npm run build",
   "builds": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist/spa"
-      }
+      "src": "dist/server/node-build.mjs",
+      "use": "@vercel/node"
     }
   ],
-   "routes": [                                                                   
-    {                                                                           
-      "src": "/(.*)",                                                           
-      "dest": "/dist/node-build.mjs"                                            
-    }                                                                           
-  ]                        
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/dist/server/node-build.mjs"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/dist/server/node-build.mjs"
+    }
+  ]
 }
