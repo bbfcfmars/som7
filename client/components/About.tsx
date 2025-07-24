@@ -19,7 +19,8 @@ export function About() {
 
           <div className="space-y-6">
             <h3 className="font-manrope font-bold text-black text-xl leading-relaxed">
-              Somnium delivers comprehensive solutions for the modern gaming industry.
+              Somnium delivers comprehensive solutions for the modern gaming
+              industry.
             </h3>
             <p className="font-poppins text-black text-base leading-relaxed">
               Somnium represents the convergence of deep industry knowledge and

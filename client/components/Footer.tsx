@@ -69,9 +69,7 @@ export function Footer() {
             Terms of Service
           </Link>
           <span>|</span>
-          <span className="whitespace-nowrap">
-            ©2025 All Rights Reserved
-          </span>
+          <span className="whitespace-nowrap">©2025 All Rights Reserved</span>
         </div>
       </div>
     </footer>

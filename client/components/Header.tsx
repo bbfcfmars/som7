@@ -10,11 +10,15 @@ export function Header() {
 
   const handleNavClick = (sectionId: string) => {
     if (isHomePage) {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById(sectionId)
+        ?.scrollIntoView({ behavior: "smooth" });
     } else {
       navigate("/");
       setTimeout(() => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+        document
+          .getElementById(sectionId)
+          ?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     }
   };
@@ -33,14 +37,14 @@ export function Header() {
   }, []);
 
   // Calculate dynamic styles based on scroll progress
-  const paddingY = 12 - (8 * scrollProgress); // 12px to 4px (py-3 to py-1)
-  const logoHeight = 80 - (40 * scrollProgress); // 80px to 40px (h-20 to h-10)
-  const logoMarginLeft = 10 - (10 * scrollProgress); // 10% to 0%
-  const navGap = 56 - (24 * scrollProgress); // 56px to 32px (gap-14 to gap-8)
-  const navMarginRight = 15 - (15 * scrollProgress); // 15% to 0%
+  const paddingY = 12 - 8 * scrollProgress; // 12px to 4px (py-3 to py-1)
+  const logoHeight = 80 - 40 * scrollProgress; // 80px to 40px (h-20 to h-10)
+  const logoMarginLeft = 10 - 10 * scrollProgress; // 10% to 0%
+  const navGap = 56 - 24 * scrollProgress; // 56px to 32px (gap-14 to gap-8)
+  const navMarginRight = 15 - 15 * scrollProgress; // 15% to 0%
 
   // Progressive opacity values that animate in lockstep
-  const gradientEndOpacity = 0.95 + (scrollProgress * 0.05); // 0.95 to 1.0 (gradient becomes less transparent)
+  const gradientEndOpacity = 0.95 + scrollProgress * 0.05; // 0.95 to 1.0 (gradient becomes less transparent)
   const shadowOpacity = scrollProgress * 0.08; // 0 to 0.08 (subtle shadow)
   const blurAmount = scrollProgress * 3; // 0 to 3px blur
 
@@ -49,7 +53,7 @@ export function Header() {
       className="fixed top-0 left-0 right-0 z-50"
       style={{
         background: `linear-gradient(to bottom, white, rgba(255, 255, 255, ${gradientEndOpacity}), rgba(255, 255, 255, ${scrollProgress * 0.3}))`,
-        backdropFilter: blurAmount > 0.5 ? `blur(${blurAmount}px)` : 'none',
+        backdropFilter: blurAmount > 0.5 ? `blur(${blurAmount}px)` : "none",
         boxShadow: `0 1px 3px 0 rgba(0, 0, 0, ${shadowOpacity})`,
         paddingTop: `${paddingY}px`,
         paddingBottom: `${paddingY}px`,
@@ -68,7 +72,7 @@ export function Header() {
               className="w-auto hover:scale-105 transition-transform duration-200"
               style={{
                 height: `${logoHeight}px`,
-                marginLeft: `${logoMarginLeft}%`
+                marginLeft: `${logoMarginLeft}%`,
               }}
             />
           </button>
@@ -80,18 +84,18 @@ export function Header() {
               className="w-auto hover:scale-105 transition-transform duration-200"
               style={{
                 height: `${logoHeight}px`,
-                marginLeft: `${logoMarginLeft}%`
+                marginLeft: `${logoMarginLeft}%`,
               }}
             />
           </Link>
         )}
 
         {/* Desktop Navigation */}
-        <nav 
+        <nav
           className="hidden md:flex items-center"
           style={{
             gap: `${navGap}px`,
-            marginRight: `${navMarginRight}%`
+            marginRight: `${navMarginRight}%`,
           }}
         >
           {["about", "services", "contact"].map((section) => (
@@ -111,18 +115,23 @@ export function Header() {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M3 12H21M3 6H21M3 18H21" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            <path
+              d="M3 12H21M3 6H21M3 18H21"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
           </svg>
         </button>
       </div>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <nav 
+        <nav
           className="md:hidden px-6 py-4"
           style={{
             backgroundColor: `rgba(255, 255, 255, ${Math.max(0.95, headerOpacity)})`,
-            borderTop: `1px solid rgba(0, 0, 0, 0.2)`
+            borderTop: `1px solid rgba(0, 0, 0, 0.2)`,
           }}
         >
           <div className="flex flex-col space-y-4">

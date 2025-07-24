@@ -28,9 +28,10 @@ export function Hero() {
       const windowHeight = window.innerHeight;
 
       // Calculate scroll progress for hero section
-      const scrollProgress = Math.max(0, Math.min(1,
-        (windowHeight - rect.top) / (windowHeight + rect.height)
-      ));
+      const scrollProgress = Math.max(
+        0,
+        Math.min(1, (windowHeight - rect.top) / (windowHeight + rect.height)),
+      );
 
       // More pronounced parallax movement, still safe within 10% buffer
       setParallaxOffset((scrollProgress - 0.5) * 80);
@@ -43,7 +44,10 @@ export function Hero() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative w-full h-screen overflow-hidden"
+    >
       {/* Video Background */}
       <iframe
         src="https://player.vimeo.com/video/1103273577?h=fb1328ca55&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0&title=0&byline=0&portrait=0&muted=1&background=1"
