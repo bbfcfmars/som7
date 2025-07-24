@@ -33,31 +33,26 @@ export function Header() {
   }, []);
 
   // Calculate dynamic styles based on scroll progress
-  const borderOpacity = scrollProgress * 0.3; // 0 to 0.3 (subtle border)
-  const shadowOpacity = scrollProgress * 0.1; // 0 to 0.1
   const paddingY = 12 - (8 * scrollProgress); // 12px to 4px (py-3 to py-1)
   const logoHeight = 80 - (40 * scrollProgress); // 80px to 40px (h-20 to h-10)
   const logoMarginLeft = 10 - (10 * scrollProgress); // 10% to 0%
   const navGap = 56 - (24 * scrollProgress); // 56px to 32px (gap-14 to gap-8)
   const navMarginRight = 15 - (15 * scrollProgress); // 15% to 0%
 
-  // Create progressive gradient transition
-  const gradientOpacity = Math.max(0, 1 - (scrollProgress * 2)); // Fade out over first 50% of scroll
-  const solidOpacity = Math.min(0.95, 0.85 + (scrollProgress * 0.1)); // Fade in gradually
-
-  // Combine gradient and solid backgrounds
-  const backgroundStyle = scrollProgress < 0.5
-    ? `linear-gradient(to bottom, white, rgba(255, 255, 255, 0.95), transparent)`
-    : `rgba(255, 255, 255, ${solidOpacity})`;
+  // Progressive opacity values that animate in lockstep
+  const gradientEndOpacity = 0.95 + (scrollProgress * 0.05); // 0.95 to 1.0 (gradient becomes less transparent)
+  const borderOpacity = scrollProgress * 0.25; // 0 to 0.25 (subtle border that grows)
+  const shadowOpacity = scrollProgress * 0.08; // 0 to 0.08 (subtle shadow)
+  const blurAmount = scrollProgress * 3; // 0 to 3px blur
 
   return (
     <header
       className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: backgroundStyle,
-        backdropFilter: scrollProgress > 0.3 ? `blur(${scrollProgress * 4}px)` : 'none',
-        borderBottom: borderOpacity > 0.05 ? `1px solid rgba(229, 231, 235, ${borderOpacity})` : 'none',
-        boxShadow: shadowOpacity > 0.02 ? `0 1px 3px 0 rgba(0, 0, 0, ${shadowOpacity})` : 'none',
+        background: `linear-gradient(to bottom, white, rgba(255, 255, 255, ${gradientEndOpacity}), rgba(255, 255, 255, ${scrollProgress * 0.3}))`,
+        backdropFilter: blurAmount > 0.5 ? `blur(${blurAmount}px)` : 'none',
+        borderBottom: `1px solid rgba(229, 231, 235, ${borderOpacity})`,
+        boxShadow: `0 1px 3px 0 rgba(0, 0, 0, ${shadowOpacity})`,
         paddingTop: `${paddingY}px`,
         paddingBottom: `${paddingY}px`,
       }}
