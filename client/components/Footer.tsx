@@ -15,7 +15,7 @@ export function Footer() {
       {/* Content */}
       <div className="relative z-10 flex h-full items-center" style={{ padding: "5%" }}>
         <div className="container mx-auto">
-          <div className="flex flex-row justify-between items-center">
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-4 md:space-y-0">
             {/* Logo */}
             <motion.button
               onClick={scrollToTop}
