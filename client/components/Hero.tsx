@@ -1,6 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export function Hero() {
+  const [parallaxOffset, setParallaxOffset] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = "https://player.vimeo.com/api/player.js";
@@ -17,8 +20,30 @@ export function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const rect = sectionRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Calculate scroll progress for hero section
+      const scrollProgress = Math.max(0, Math.min(1,
+        (windowHeight - rect.top) / (windowHeight + rect.height)
+      ));
+
+      // Conservative parallax movement to stay within 10% buffer
+      setParallaxOffset((scrollProgress - 0.5) * 40);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section ref={sectionRef} className="relative w-full h-screen overflow-hidden">
       {/* Video Background */}
       <iframe
         src="https://player.vimeo.com/video/1103273577?h=fb1328ca55&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0&title=0&byline=0&portrait=0&muted=1&background=1"
@@ -26,6 +51,10 @@ export function Hero() {
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
         className="absolute inset-0 w-[120%] h-[120%] object-cover"
+        style={{
+          transform: `translateY(${parallaxOffset}px)`,
+          willChange: "transform",
+        }}
         title="hero-video"
       />
 
