@@ -157,7 +157,7 @@ export function Header() {
           <motion.nav
             className="hidden md:flex items-center"
             animate={{
-              gap: isScrolled ? "2rem" : "34%",
+              gap: isScrolled ? "2rem" : "57px",
               margin: isScrolled ? "0" : "5% 15% 5% 5%",
             }}
             transition={{
@@ -166,7 +166,7 @@ export function Header() {
             }}
             style={{
               willChange: "gap, margin",
-              gap: isScrolled ? "2rem" : "34%",
+              gap: isScrolled ? "2rem" : "57px",
               margin: isScrolled ? "0" : "5% 15% 5% 5%",
             }}
           >
@@ -204,7 +204,7 @@ export function Header() {
             </motion.button>
             <motion.button
               onClick={() => handleNavClick("contact")}
-              className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
+              className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer mr-6"
               whileHover={{
                 scale: 1.05,
                 transition: {
