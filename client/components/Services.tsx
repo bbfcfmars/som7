@@ -1,7 +1,8 @@
 import { useEffect, useState, useRef } from "react";
 
 export function Services() {
-  const [scrollY, setScrollY] = useState(0);
+  const [transform, setTransform] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
   const rafRef = useRef<number>();
 
   useEffect(() => {
@@ -9,12 +10,36 @@ export function Services() {
       if (rafRef.current) {
         cancelAnimationFrame(rafRef.current);
       }
+
       rafRef.current = requestAnimationFrame(() => {
-        setScrollY(window.scrollY);
+        if (!sectionRef.current) return;
+
+        const rect = sectionRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        // Calculate how much of the section is visible and the scroll progress
+        const sectionTop = rect.top;
+        const sectionHeight = rect.height;
+
+        // Start parallax when section comes into view and continue until it leaves
+        const scrollProgress = (windowHeight - sectionTop) / (windowHeight + sectionHeight);
+
+        // Clamp progress between 0 and 1
+        const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
+
+        // Calculate parallax offset (moving slower than scroll for depth effect)
+        const parallaxOffset = (clampedProgress - 0.5) * 100;
+
+        setTransform(parallaxOffset);
       });
     };
 
+    // Use passive scroll listener for better performance
     window.addEventListener("scroll", handleScroll, { passive: true });
+
+    // Initial calculation
+    handleScroll();
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (rafRef.current) {
