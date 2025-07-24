@@ -10,12 +10,12 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative min-h-[80px] h-auto md:h-[80px] overflow-hidden" style={{backgroundColor: "#222222"}}>   
+    <footer className="relative h-[88px] overflow-hidden" style={{backgroundColor: "#222222"}}>   
 
       {/* Content */}
-      <div className="relative z-10 flex h-full items-center py-4 px-4 md:p-[5%]">
+      <div className="relative z-10 flex h-full items-center justify-center -mb-1" style={{padding: "5% 5% 28px"}}>
         <div className="container mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+          <div className="flex flex-row justify-between items-center h-auto flex-grow-0" style={{padding: "0 32px"}}>
             {/* Logo */}
             <motion.button
               onClick={scrollToTop}
@@ -36,12 +36,12 @@ export function Footer() {
                 alt="Atsomnium Partners Logo - Scroll to Top"
                 className="h-auto w-auto"
                 style={{ height: "59px" }}
-                className="mx-auto md:ml-auto mb-4 md:mb-10"
+                style={{margin: "0 auto 40px"}}
               />
             </motion.button>
 
             {/* Contact Info */}
-            <div className="flex flex-col space-y-2 text-white text-sm items-center md:items-start justify-center mx-auto md:mx-0 mb-4 md:mb-7 md:ml-10">
+            <div className="flex flex-col space-y-2 text-white text-sm items-start justify-center" style={{margin: "0 190px 31px 40px"}}>
               <div className="flex items-center space-x-2">
                 <svg
                   width="16"
@@ -88,7 +88,7 @@ export function Footer() {
             </div>
 
             {/* Footer Links */}
-            <div className="flex items-center md:items-end space-x-2 md:space-x-3 text-white text-xs text-center md:text-left flex-wrap justify-center md:justify-start">
+            <div className="flex items-end space-x-3 text-white text-xs text-left flex-wrap justify-start" style={{marginRight: "37px"}}>
               <Link
                 to="/privacy-policy"
                 className="hover:text-primary transition-colors"
