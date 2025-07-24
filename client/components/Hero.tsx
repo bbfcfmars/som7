@@ -61,17 +61,24 @@ export function Hero() {
       {/* Overlay and Content */}
       <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-center px-6">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight -mr-0.5">
+          <h1
+            className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight -mr-0.5"
+            style={{ textShadow: "2px 4px 8px rgba(0, 0, 0, 0.8)" }}
+          >
             Redefining Gaming Excellence
           </h1>
-          
-          <p className="font-poppins text-white text-2xl md:text-3xl pt-[15px] pb-[25px]">
+
+          <p
+            className="font-poppins text-white text-2xl md:text-3xl pt-[15px] pb-[25px]"
+            style={{ textShadow: "2px 4px 8px rgba(0, 0, 0, 0.8)" }}
+          >
             Where operational expertise meets cutting-edge innovation.
           </p>
-          
+
           <a
             href="#about"
             className="inline-flex items-center justify-center px-12 py-4 border-2 border-white bg-transparent rounded-full text-white font-poppins text-xl hover:bg-primary hover:border-primary transition-all duration-300 hover:scale-105"
+            style={{ textShadow: "1px 2px 4px rgba(0, 0, 0, 0.8)" }}
           >
             Learn More
           </a>
