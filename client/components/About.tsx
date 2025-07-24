@@ -2,10 +2,9 @@ export function About() {
   return (
     <section
       id="about"
-      className="p-[5%_10%_10%] bg-section-light"
+      className="p-[5%_10%_11%] bg-section-light"
       style={{
         boxShadow: "21px 30px 50px 5px rgb(0, 0, 0)",
-        marginTop: "-50px",
       }}
     >
       <div className="container mx-auto px-6">
