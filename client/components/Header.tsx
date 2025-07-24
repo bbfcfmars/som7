@@ -41,7 +41,6 @@ export function Header() {
 
   // Progressive opacity values that animate in lockstep
   const gradientEndOpacity = 0.95 + (scrollProgress * 0.05); // 0.95 to 1.0 (gradient becomes less transparent)
-  const borderOpacity = scrollProgress * 0.25; // 0 to 0.25 (subtle border that grows)
   const shadowOpacity = scrollProgress * 0.08; // 0 to 0.08 (subtle shadow)
   const blurAmount = scrollProgress * 3; // 0 to 3px blur
 
@@ -51,7 +50,6 @@ export function Header() {
       style={{
         background: `linear-gradient(to bottom, white, rgba(255, 255, 255, ${gradientEndOpacity}), rgba(255, 255, 255, ${scrollProgress * 0.3}))`,
         backdropFilter: blurAmount > 0.5 ? `blur(${blurAmount}px)` : 'none',
-        borderBottom: `1px solid rgba(229, 231, 235, ${borderOpacity})`,
         boxShadow: `0 1px 3px 0 rgba(0, 0, 0, ${shadowOpacity})`,
         paddingTop: `${paddingY}px`,
         paddingBottom: `${paddingY}px`,
