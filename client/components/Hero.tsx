@@ -26,38 +26,25 @@ export function Hero() {
       style={{ height: "100vh", minHeight: "100vh" }}
     >
       {/* Full-bleed Video Background */}
-      <div
-        className="absolute inset-0 w-full h-full"
-        style={{ height: "100%", minHeight: "100vh" }}
-      >
-        <div
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <iframe
+          src="https://player.vimeo.com/video/1103273577?h=fb1328ca55&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0&title=0&byline=0&portrait=0&muted=1&background=1"
+          frameBorder="0"
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
           style={{
             position: "absolute",
             top: "50%",
             left: "50%",
-            transform: "translate(-50%, -50%)",
             width: "100vw",
-            height: "100vh",
+            height: "calc(100vh + 4px)",
             minWidth: "100%",
-            minHeight: "100%",
+            minHeight: "calc(100% + 4px)",
+            transform: "translate(-50%, -50%)",
+            objectFit: "cover",
           }}
-        >
-          <iframe
-            src="https://player.vimeo.com/video/1103273577?h=fb1328ca55&badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&controls=0&title=0&byline=0&portrait=0&muted=1&background=1"
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-            }}
-            title="hero-video"
-          ></iframe>
-        </div>
+          title="hero-video"
+        ></iframe>
       </div>
 
       {/* Dark overlay for text readability */}
