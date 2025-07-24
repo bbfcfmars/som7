@@ -10,7 +10,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative h-[200px] overflow-hidden">
+    <footer className="relative h-[200px] overflow-hidden" style="background-color:black;">
      
         <div className="absolute inset-0 bg-gradient-to-t from-black from-0% to-transparent to-70%"></div>
    
