@@ -88,7 +88,7 @@ export function Footer() {
             </div>
 
             {/* Footer Links */}
-            <div className="flex items-center space-x-3 text-white text-xs">
+            <div className="flex items-end space-x-3 text-white text-xs self-end">
               <Link
                 to="/privacy-policy"
                 className="hover:text-primary transition-colors"
@@ -103,7 +103,7 @@ export function Footer() {
                 Terms of Service
               </Link>
               <span>|</span>
-              <span>©2025</span>
+              <span>©2025 All Rights Reserved</span>
             </div>
           </div>
         </div>
