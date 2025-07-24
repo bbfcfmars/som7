@@ -25,14 +25,14 @@ export function Hero() {
         frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
-        className="absolute inset-0 w-[120%] h-[120%] -ml-[10%] -mt-[10%] object-cover"
+        className="absolute inset-0 w-[120%] h-[120%] object-cover"
         title="hero-video"
       />
 
       {/* Overlay and Content */}
       <div className="absolute inset-0 bg-black/50 flex items-center justify-center text-center px-6">
-        <div className="space-y-8 max-w-4xl">
-          <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight">
+        <div className="flex flex-col justify-center items-center">
+          <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight -mr-0.5">
             Redefining Gaming Excellence
           </h1>
           
