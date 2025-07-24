@@ -143,8 +143,8 @@ export function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="space-y-6 w-auto self-center lg:-ml-0.5">
-              <form className="space-y-4 w-full max-w-lg lg:max-w-xl xl:w-[532px] lg:-ml-16 xl:-ml-[108px] self-start">
+            <div className="space-y-6 w-auto self-start lg:-ml-0.5 -mt-8 md:-mt-8">
+              <form className="space-y-4 w-full max-w-lg lg:max-w-xl xl:w-[532px] lg:-ml-16 xl:-ml-[108px]">
                 {/* First and Last Name Row */}
                 <div className="grid md:grid-cols-2 gap-4">
                   <input
