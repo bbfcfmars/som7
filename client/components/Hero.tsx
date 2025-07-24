@@ -51,7 +51,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       {/* Content */}
-      <div className="relative z-20 text-center flex flex-col justify-center items-center h-full w-full px-6">
+      <div className="relative z-20 text-center flex flex-col justify-center items-center h-full w-full px-6 pb-0.5">
         <div className="flex flex-col items-center justify-center space-y-8">
           <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight text-center">
             Redefining Gaming Excellence
