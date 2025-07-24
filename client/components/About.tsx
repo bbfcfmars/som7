@@ -31,11 +31,11 @@ export function About() {
             </h3>
 
             <p className="font-poppins text-black text-base leading-relaxed">
-              Somnium represents the convergence of deep industry knowledge
-              and breakthrough technology. We understand the gaming landscape
-              from every angle—operations, innovation, and market
-              dynamics—providing our clients with unparalleled expertise to
-              navigate and excel in this evolving industry.
+              Somnium represents the convergence of deep industry knowledge and
+              breakthrough technology. We understand the gaming landscape from
+              every angle—operations, innovation, and market dynamics—providing
+              our clients with unparalleled expertise to navigate and excel in
+              this evolving industry.
             </p>
           </div>
         </div>

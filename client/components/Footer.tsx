@@ -10,8 +10,10 @@ export function Footer() {
   };
 
   return (
-    <footer className="relative h-[88px] overflow-hidden" style={{backgroundColor: "#222222"}}>   
-
+    <footer
+      className="relative h-[88px] overflow-hidden"
+      style={{ backgroundColor: "#222222" }}
+    >
       {/* Content */}
       <div className="relative z-10 flex h-full items-center px-8">
         <div className="container mx-auto">
@@ -99,7 +101,9 @@ export function Footer() {
                 Terms of Service
               </Link>
               <span>|</span>
-              <span className="whitespace-nowrap">©2025 All Rights Reserved</span>
+              <span className="whitespace-nowrap">
+                ©2025 All Rights Reserved
+              </span>
             </div>
           </div>
         </div>

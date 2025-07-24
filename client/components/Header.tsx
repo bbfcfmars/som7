@@ -119,142 +119,142 @@ export function Header() {
           paddingBottom: isScrolled ? "0.25rem" : "0.75rem",
         }}
       >
-          {/* Logo */}
-          <Link to="/" className="flex items-center cursor-pointer">
-            <motion.img
-              src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
-              alt="Atsomnium Partners Logo"
-              className="w-auto"
-              animate={{
-                height: isScrolled ? "40px" : "100px",
-                minHeight: isScrolled ? "40px" : "100px",
-                marginLeft: isScrolled ? "0%" : "10%",
-              }}
-              transition={{
-                duration: hasInitialized ? 0.3 : 0,
-                ease: [0.4, 0, 0.2, 1],
-              }}
-              style={{
-                willChange: "height, margin",
-                height: isScrolled ? "40px" : "100px",
-                minHeight: isScrolled ? "40px" : "100px",
-                marginLeft: isScrolled ? "0%" : "10%",
-              }}
-              whileHover={{
-                scale: isScrolled ? 1.05 : 1.1,
-                transition: {
-                  type: "spring",
-                  stiffness: 400,
-                  damping: 10,
-                  duration: 0.3,
-                },
-              }}
-              whileTap={{ scale: 0.95 }}
-            />
-          </Link>
-
-          {/* Desktop Navigation */}
-          <motion.nav
-            className="hidden md:flex items-center"
+        {/* Logo */}
+        <Link to="/" className="flex items-center cursor-pointer">
+          <motion.img
+            src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
+            alt="Atsomnium Partners Logo"
+            className="w-auto"
             animate={{
-              gap: isScrolled ? "2rem" : "57px",
-              margin: isScrolled ? "0" : "5% 15% 5% 5%",
+              height: isScrolled ? "40px" : "100px",
+              minHeight: isScrolled ? "40px" : "100px",
+              marginLeft: isScrolled ? "0%" : "10%",
             }}
             transition={{
               duration: hasInitialized ? 0.3 : 0,
               ease: [0.4, 0, 0.2, 1],
             }}
             style={{
-              willChange: "gap, margin",
-              gap: isScrolled ? "2rem" : "57px",
-              margin: isScrolled ? "0" : "5% 15% 5% 5%",
+              willChange: "height, margin",
+              height: isScrolled ? "40px" : "100px",
+              minHeight: isScrolled ? "40px" : "100px",
+              marginLeft: isScrolled ? "0%" : "10%",
             }}
-          >
-            <motion.button
-              onClick={() => handleNavClick("about")}
-              className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
-              whileHover={{
-                scale: 1.05,
-                transition: {
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 15,
-                  duration: 0.2,
-                },
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              About
-            </motion.button>
-            <motion.button
-              onClick={() => handleNavClick("services")}
-              className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
-              whileHover={{
-                scale: 1.05,
-                transition: {
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 15,
-                  duration: 0.2,
-                },
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Services
-            </motion.button>
-            <motion.button
-              onClick={() => handleNavClick("contact")}
-              className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer mr-6"
-              whileHover={{
-                scale: 1.05,
-                transition: {
-                  type: "spring",
-                  stiffness: 300,
-                  damping: 15,
-                  duration: 0.2,
-                },
-              }}
-              whileTap={{ scale: 0.98 }}
-            >
-              Contact
-            </motion.button>
-          </motion.nav>
+            whileHover={{
+              scale: isScrolled ? 1.05 : 1.1,
+              transition: {
+                type: "spring",
+                stiffness: 400,
+                damping: 10,
+                duration: 0.3,
+              },
+            }}
+            whileTap={{ scale: 0.95 }}
+          />
+        </Link>
 
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden text-black"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+        {/* Desktop Navigation */}
+        <motion.nav
+          className="hidden md:flex items-center"
+          animate={{
+            gap: isScrolled ? "2rem" : "57px",
+            margin: isScrolled ? "0" : "5% 15% 5% 5%",
+          }}
+          transition={{
+            duration: hasInitialized ? 0.3 : 0,
+            ease: [0.4, 0, 0.2, 1],
+          }}
+          style={{
+            willChange: "gap, margin",
+            gap: isScrolled ? "2rem" : "57px",
+            margin: isScrolled ? "0" : "5% 15% 5% 5%",
+          }}
+        >
+          <motion.button
+            onClick={() => handleNavClick("about")}
+            className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
+            whileHover={{
+              scale: 1.05,
+              transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+                duration: 0.2,
+              },
+            }}
+            whileTap={{ scale: 0.98 }}
           >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M3 12H21"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M3 6H21"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M3 18H21"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
+            About
+          </motion.button>
+          <motion.button
+            onClick={() => handleNavClick("services")}
+            className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
+            whileHover={{
+              scale: 1.05,
+              transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+                duration: 0.2,
+              },
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Services
+          </motion.button>
+          <motion.button
+            onClick={() => handleNavClick("contact")}
+            className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer mr-6"
+            whileHover={{
+              scale: 1.05,
+              transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+                duration: 0.2,
+              },
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Contact
+          </motion.button>
+        </motion.nav>
+
+        {/* Mobile menu button */}
+        <button
+          className="md:hidden text-black"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M3 12H21"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M3 6H21"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M3 18H21"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (

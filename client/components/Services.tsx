@@ -22,7 +22,8 @@ export function Services() {
         const sectionHeight = rect.height;
 
         // Start parallax when section comes into view and continue until it leaves
-        const scrollProgress = (windowHeight - sectionTop) / (windowHeight + sectionHeight);
+        const scrollProgress =
+          (windowHeight - sectionTop) / (windowHeight + sectionHeight);
 
         // Clamp progress between 0 and 1
         const clampedProgress = Math.max(0, Math.min(1, scrollProgress));
@@ -70,7 +71,11 @@ export function Services() {
   ];
 
   return (
-    <section ref={sectionRef} id="services" className="relative py-12 overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="services"
+      className="relative py-12 overflow-hidden"
+    >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 overflow-hidden">
         <img
