@@ -4,7 +4,7 @@ export function Contact() {
   return (
     <section
       id="contact"
-      className="p-[5%_10%_10%] bg-section-light"
+      className="p-[5%_10%_76px] bg-section-light mb-[2px]"
       style={{
         boxShadow:
           "0 25px 30px -5px rgba(0, 0, 0, 0.95), 0 15px 20px -3px rgba(0, 0, 0, 0.6)",
