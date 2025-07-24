@@ -70,7 +70,7 @@ export function Services() {
   ];
 
   return (
-    <section id="services" className="relative py-20 overflow-hidden">
+    <section ref={sectionRef} id="services" className="relative py-20 overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 overflow-hidden">
         <img
@@ -78,11 +78,13 @@ export function Services() {
           alt="Gaming background"
           className="w-full object-cover object-center absolute"
           style={{
-            height: "150%",
-            top: "-25%",
+            height: "120%",
+            top: "-10%",
             left: "0",
-            transform: `translateY(${Math.min(100, Math.max(-100, scrollY * 0.15))}px)`,
+            transform: `translate3d(0, ${transform}px, 0)`,
             willChange: "transform",
+            backfaceVisibility: "hidden",
+            perspective: "1000px",
           }}
         />
         <div className="absolute inset-0 bg-black/60"></div>
