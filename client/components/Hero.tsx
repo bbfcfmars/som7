@@ -36,7 +36,7 @@ export function Hero() {
             Redefining Gaming Excellence
           </h1>
           
-          <p className="font-poppins text-white text-2xl md:text-3xl">
+          <p className="font-poppins text-white text-2xl md:text-3xl pt-[15px] pb-[25px]">
             Where operational expertise meets cutting-edge innovation.
           </p>
           
