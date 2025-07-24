@@ -51,31 +51,33 @@ export function Hero() {
       <div className="absolute inset-0 bg-black/50 z-10"></div>
 
       {/* Content */}
-      <div className="relative z-20 text-center flex flex-col m-auto">
-        <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight m-auto mb-6">
-          Redefining Gaming Excellence
-        </h1>
+      <div className="relative z-20 text-center flex flex-col justify-center items-center h-full w-full px-6">
+        <div className="flex flex-col items-center justify-center space-y-8">
+          <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight text-center">
+            Redefining Gaming Excellence
+          </h1>
 
-        <p className="font-poppins text-white text-2xl md:text-3xl max-w-[996px] m-auto mb-12">
-          Where operational expertise meets cutting-edge innovation.
-        </p>
+          <p className="font-poppins text-white text-2xl md:text-3xl max-w-[996px] text-center">
+            Where operational expertise meets cutting-edge innovation.
+          </p>
 
-        <motion.a
-          href="#about"
-          className="inline-flex items-center justify-center px-12 py-4 border-2 border-white bg-transparent rounded-full text-white font-poppins text-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 shadow-lg max-w-[250px] m-auto"
-          whileHover={{
-            scale: 1.05,
-            transition: {
-              type: "spring",
-              stiffness: 300,
-              damping: 15,
-              duration: 0.2,
-            },
-          }}
-          whileTap={{ scale: 0.98 }}
-        >
-          Learn More
-        </motion.a>
+          <motion.a
+            href="#about"
+            className="inline-flex items-center justify-center px-12 py-4 border-2 border-white bg-transparent rounded-full text-white font-poppins text-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 shadow-lg"
+            whileHover={{
+              scale: 1.05,
+              transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+                duration: 0.2,
+              },
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Learn More
+          </motion.a>
+        </div>
       </div>
     </section>
   );
