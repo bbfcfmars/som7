@@ -57,17 +57,34 @@ export function Header() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
-            alt="Atsomnium Partners Logo"
-            className="w-auto hover:scale-105 transition-transform duration-200"
-            style={{
-              height: `${logoHeight}px`,
-              marginLeft: `${logoMarginLeft}%`
-            }}
-          />
-        </Link>
+        {isHomePage ? (
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center"
+          >
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
+              alt="Atsomnium Partners Logo"
+              className="w-auto hover:scale-105 transition-transform duration-200"
+              style={{
+                height: `${logoHeight}px`,
+                marginLeft: `${logoMarginLeft}%`
+              }}
+            />
+          </button>
+        ) : (
+          <Link to="/" className="flex items-center">
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
+              alt="Atsomnium Partners Logo"
+              className="w-auto hover:scale-105 transition-transform duration-200"
+              style={{
+                height: `${logoHeight}px`,
+                marginLeft: `${logoMarginLeft}%`
+              }}
+            />
+          </Link>
+        )}
 
         {/* Desktop Navigation */}
         <nav 
