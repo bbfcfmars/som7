@@ -25,7 +25,7 @@ export function Hero() {
         frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
-        className="absolute inset-0 w-[110%] h-[110%] -ml-[5%] -mt-[5%] object-cover"
+        className="absolute inset-0 w-[120%] h-[120%] -ml-[10%] -mt-[10%] object-cover"
         title="hero-video"
       />
 
