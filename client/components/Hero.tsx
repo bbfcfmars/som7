@@ -32,8 +32,8 @@ export function Hero() {
         (windowHeight - rect.top) / (windowHeight + rect.height)
       ));
 
-      // Conservative parallax movement to stay within 10% buffer
-      setParallaxOffset((scrollProgress - 0.5) * 40);
+      // More pronounced parallax movement, still safe within 10% buffer
+      setParallaxOffset((scrollProgress - 0.5) * 80);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
