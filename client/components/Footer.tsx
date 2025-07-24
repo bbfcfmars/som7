@@ -88,7 +88,7 @@ export function Footer() {
             </div>
 
             {/* Footer Links */}
-            <div className="flex flex-row items-center space-x-3 text-white text-xs text-left justify-start overflow-auto" style={{width: "563.1px"}}>
+            <div className="flex flex-row items-center space-x-3 text-white text-xs text-left justify-start" style={{width: "auto", minWidth: "400px"}}>
               <Link
                 to="/privacy-policy"
                 className="hover:text-primary transition-colors whitespace-nowrap"
