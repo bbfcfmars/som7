@@ -36,7 +36,7 @@ export function Footer() {
                 alt="Atsomnium Partners Logo - Scroll to Top"
                 className="h-auto w-auto"
                 style={{ height: "59px" }}
-                style={{margin: "0 auto 40px"}}
+                style={{margin: "0 auto 41px", width: "180px"}}
               />
             </motion.button>
 
@@ -88,22 +88,24 @@ export function Footer() {
             </div>
 
             {/* Footer Links */}
-            <div className="flex items-end space-x-3 text-white text-xs text-left flex-wrap justify-start" style={{marginRight: "37px"}}>
+            <div className="flex flex-row items-center space-x-3 text-white text-xs text-left justify-start overflow-auto" style={{width: "563.1px"}}>
               <Link
                 to="/privacy-policy"
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-colors whitespace-nowrap"
+                style={{width: "100%"}}
               >
                 Privacy Policy
               </Link>
               <span>|</span>
               <Link
                 to="/terms-of-service"
-                className="hover:text-primary transition-colors"
+                className="hover:text-primary transition-colors whitespace-nowrap"
+                style={{width: "100%", flexGrow: "0"}}
               >
                 Terms of Service
               </Link>
               <span>|</span>
-              <span>©2025 All Rights Reserved</span>
+              <span className="whitespace-nowrap" style={{width: "100%"}}>©2025 All Rights Reserved</span>
             </div>
           </div>
         </div>
