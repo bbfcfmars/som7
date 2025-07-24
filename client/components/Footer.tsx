@@ -1,11 +1,11 @@
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 export function Footer() {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -24,7 +24,7 @@ export function Footer() {
       {/* Content */}
       <div
         className="relative z-10 mt-auto flex h-full items-center"
-        style={{ padding: "105px 0 3px" }}
+        style={{ padding: '105px 0 3px' }}
       >
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
@@ -35,7 +35,7 @@ export function Footer() {
               whileHover={{
                 scale: 1.1,
                 transition: {
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 400,
                   damping: 10,
                   duration: 0.3,
@@ -47,7 +47,7 @@ export function Footer() {
                 src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F1ce67e3496004f8db2a91a50931ea0dc?format=webp&width=800"
                 alt="Atsomnium Partners Logo - Scroll to Top"
                 className="h-16 w-auto"
-                style={{ height: "73px", margin: "-2px 0 9px" }}
+                style={{ height: '73px', margin: '-2px 0 9px' }}
               />
             </motion.button>
 

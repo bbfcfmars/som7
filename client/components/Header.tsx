@@ -1,6 +1,6 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,12 +8,12 @@ export function Header() {
   const [hasInitialized, setHasInitialized] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
-  const isHomePage = location.pathname === "/";
+  const isHomePage = location.pathname === '/';
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -21,7 +21,7 @@ export function Header() {
     if (isHomePage) {
       const element = document.getElementById(sectionId);
       if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
+        element.scrollIntoView({ behavior: 'smooth' });
       }
     }
   };
@@ -31,12 +31,12 @@ export function Header() {
       scrollToSection(sectionId);
     } else {
       // Navigate to home page, then scroll to section after navigation
-      navigate("/");
+      navigate('/');
       // Use setTimeout to ensure navigation completes before scrolling
       setTimeout(() => {
         const element = document.getElementById(sectionId);
         if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
+          element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
     }
@@ -61,8 +61,8 @@ export function Header() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
@@ -71,7 +71,7 @@ export function Header() {
       <motion.div
         className="absolute inset-0 bg-gradient-to-b from-white via-white/95 to-transparent"
         animate={{
-          height: isScrolled ? "50%" : "100%",
+          height: isScrolled ? '50%' : '100%',
           opacity: isScrolled ? 0.9 : 1,
         }}
         transition={{
@@ -81,8 +81,8 @@ export function Header() {
           opacity: { duration: hasInitialized ? 0.3 : 0 },
         }}
         style={{
-          willChange: "height, opacity",
-          height: isScrolled ? "50%" : "100%",
+          willChange: 'height, opacity',
+          height: isScrolled ? '50%' : '100%',
           opacity: isScrolled ? 0.9 : 1,
         }}
       />
@@ -98,7 +98,7 @@ export function Header() {
           ease: [0.4, 0, 0.2, 1],
         }}
         style={{
-          willChange: "opacity",
+          willChange: 'opacity',
           opacity: isScrolled ? 1 : 0,
         }}
       />
@@ -106,17 +106,17 @@ export function Header() {
       <motion.div
         className="relative container mx-auto px-6"
         animate={{
-          paddingTop: isScrolled ? "0.25rem" : "1.5rem",
-          paddingBottom: isScrolled ? "0.25rem" : "1.5rem",
+          paddingTop: isScrolled ? '0.25rem' : '1.5rem',
+          paddingBottom: isScrolled ? '0.25rem' : '1.5rem',
         }}
         transition={{
           duration: hasInitialized ? 0.3 : 0,
           ease: [0.4, 0, 0.2, 1],
         }}
         style={{
-          willChange: "padding",
-          paddingTop: isScrolled ? "0.25rem" : "1.5rem",
-          paddingBottom: isScrolled ? "0.25rem" : "1.5rem",
+          willChange: 'padding',
+          paddingTop: isScrolled ? '0.25rem' : '1.5rem',
+          paddingBottom: isScrolled ? '0.25rem' : '1.5rem',
         }}
       >
         <div className="flex items-center justify-between">
@@ -127,24 +127,24 @@ export function Header() {
               alt="Atsomnium Partners Logo"
               className="w-auto"
               animate={{
-                height: isScrolled ? "40px" : "100px",
-                minHeight: isScrolled ? "40px" : "100px",
-                marginLeft: isScrolled ? "0%" : "10%",
+                height: isScrolled ? '40px' : '100px',
+                minHeight: isScrolled ? '40px' : '100px',
+                marginLeft: isScrolled ? '0%' : '10%',
               }}
               transition={{
                 duration: hasInitialized ? 0.3 : 0,
                 ease: [0.4, 0, 0.2, 1],
               }}
               style={{
-                willChange: "height, margin",
-                height: isScrolled ? "40px" : "100px",
-                minHeight: isScrolled ? "40px" : "100px",
-                marginLeft: isScrolled ? "0%" : "10%",
+                willChange: 'height, margin',
+                height: isScrolled ? '40px' : '100px',
+                minHeight: isScrolled ? '40px' : '100px',
+                marginLeft: isScrolled ? '0%' : '10%',
               }}
               whileHover={{
                 scale: isScrolled ? 1.05 : 1.1,
                 transition: {
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 400,
                   damping: 10,
                   duration: 0.3,
@@ -158,26 +158,26 @@ export function Header() {
           <motion.nav
             className="hidden md:flex items-center"
             animate={{
-              gap: isScrolled ? "2rem" : "34%",
-              margin: isScrolled ? "0" : "5% 15% 5% 5%",
+              gap: isScrolled ? '2rem' : '34%',
+              margin: isScrolled ? '0' : '5% 15% 5% 5%',
             }}
             transition={{
               duration: hasInitialized ? 0.3 : 0,
               ease: [0.4, 0, 0.2, 1],
             }}
             style={{
-              willChange: "gap, margin",
-              gap: isScrolled ? "2rem" : "34%",
-              margin: isScrolled ? "0" : "5% 15% 5% 5%",
+              willChange: 'gap, margin',
+              gap: isScrolled ? '2rem' : '34%',
+              margin: isScrolled ? '0' : '5% 15% 5% 5%',
             }}
           >
             <motion.button
-              onClick={() => handleNavClick("about")}
+              onClick={() => handleNavClick('about')}
               className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
                 transition: {
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 300,
                   damping: 15,
                   duration: 0.2,
@@ -188,12 +188,12 @@ export function Header() {
               About
             </motion.button>
             <motion.button
-              onClick={() => handleNavClick("services")}
+              onClick={() => handleNavClick('services')}
               className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
                 transition: {
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 300,
                   damping: 15,
                   duration: 0.2,
@@ -204,12 +204,12 @@ export function Header() {
               Services
             </motion.button>
             <motion.button
-              onClick={() => handleNavClick("contact")}
+              onClick={() => handleNavClick('contact')}
               className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
               whileHover={{
                 scale: 1.05,
                 transition: {
-                  type: "spring",
+                  type: 'spring',
                   stiffness: 300,
                   damping: 15,
                   duration: 0.2,
@@ -264,14 +264,14 @@ export function Header() {
             <div className="flex flex-col space-y-4 pt-4">
               <motion.button
                 onClick={() => {
-                  handleNavClick("about");
+                  handleNavClick('about');
                   setIsMenuOpen(false);
                 }}
                 className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   transition: {
-                    type: "spring",
+                    type: 'spring',
                     stiffness: 300,
                     damping: 15,
                     duration: 0.2,
@@ -283,14 +283,14 @@ export function Header() {
               </motion.button>
               <motion.button
                 onClick={() => {
-                  handleNavClick("services");
+                  handleNavClick('services');
                   setIsMenuOpen(false);
                 }}
                 className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   transition: {
-                    type: "spring",
+                    type: 'spring',
                     stiffness: 300,
                     damping: 15,
                     duration: 0.2,
@@ -302,14 +302,14 @@ export function Header() {
               </motion.button>
               <motion.button
                 onClick={() => {
-                  handleNavClick("contact");
+                  handleNavClick('contact');
                   setIsMenuOpen(false);
                 }}
                 className="text-black hover:text-primary font-poppins text-lg transition-colors cursor-pointer"
                 whileHover={{
                   scale: 1.05,
                   transition: {
-                    type: "spring",
+                    type: 'spring',
                     stiffness: 300,
                     damping: 15,
                     duration: 0.2,

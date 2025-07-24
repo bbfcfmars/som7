@@ -1,21 +1,21 @@
-import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 export function Hero() {
   return (
     <section
       className="relative w-full flex items-center justify-center overflow-hidden"
-      style={{ height: "100vh", minHeight: "100vh" }}
+      style={{ height: '100vh', minHeight: '100vh' }}
     >
       {/* Full-bleed Video Background */}
       <div
         className="absolute inset-0 w-full h-full"
-        style={{ 
-          height: "100%", 
-          minHeight: "100vh",
-          width: "100vw",
-          left: "50%",
-          transform: "translateX(-50%)"
+        style={{
+          height: '100%',
+          minHeight: '100vh',
+          width: '100vw',
+          left: '50%',
+          transform: 'translateX(-50%)',
         }}
       >
         <video
@@ -25,11 +25,11 @@ export function Hero() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
           style={{
-            width: "100vw",
-            height: "100vh",
-            minWidth: "100vw",
-            minHeight: "100vh",
-            objectFit: "cover",
+            width: '100vw',
+            height: '100vh',
+            minWidth: '100vw',
+            minHeight: '100vh',
+            objectFit: 'cover',
           }}
         >
           <source src="/videos/hero-video.mp4" type="video/mp4" />
@@ -40,14 +40,14 @@ export function Hero() {
             allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             style={{
-              position: "absolute",
+              position: 'absolute',
               top: 0,
               left: 0,
-              width: "100vw",
-              height: "100vh",
-              minWidth: "100vw",
-              minHeight: "100vh",
-              objectFit: "cover",
+              width: '100vw',
+              height: '100vh',
+              minWidth: '100vw',
+              minHeight: '100vh',
+              objectFit: 'cover',
             }}
             title="hero-video"
           ></iframe>
@@ -59,30 +59,37 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-20 text-center flex flex-col m-auto">
-        <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight m-auto mb-6">
-          Redefining Gaming Excellence
-        </h1>
+        {/* Soft blurred shadow behind text */}
+        <div
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-3xl h-[320px] md:h-[400px] rounded-3xl bg-black/60 blur-2xl opacity-70 pointer-events-none"
+          style={{ filter: 'blur(32px)', zIndex: 1 }}
+        ></div>
+        <div className="relative z-10 flex flex-col items-center">
+          <h1 className="font-manrope font-bold text-white text-5xl md:text-7xl leading-tight m-auto mb-6">
+            Redefining Gaming Excellence
+          </h1>
 
-        <p className="font-poppins text-white text-2xl md:text-3xl max-w-[996px] m-auto mb-12">
-          Where operational expertise meets cutting-edge innovation.
-        </p>
+          <p className="font-poppins text-white text-2xl md:text-3xl max-w-[996px] m-auto mb-12">
+            Where operational expertise meets cutting-edge innovation.
+          </p>
 
-        <motion.a
-          href="#about"
-          className="inline-flex items-center justify-center px-12 py-4 border-2 border-white bg-transparent rounded-full text-white font-poppins text-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 shadow-lg max-w-[250px] m-auto"
-          whileHover={{
-            scale: 1.05,
-            transition: {
-              type: "spring",
-              stiffness: 300,
-              damping: 15,
-              duration: 0.2,
-            },
-          }}
-          whileTap={{ scale: 0.98 }}
-        >
-          Learn More
-        </motion.a>
+          <motion.a
+            href="#about"
+            className="inline-flex items-center justify-center px-12 py-4 border-2 border-white bg-transparent rounded-full text-white font-poppins text-xl hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 shadow-lg max-w-[250px] m-auto"
+            whileHover={{
+              scale: 1.05,
+              transition: {
+                type: 'spring',
+                stiffness: 300,
+                damping: 15,
+                duration: 0.2,
+              },
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Learn More
+          </motion.a>
+        </div>
       </div>
     </section>
   );

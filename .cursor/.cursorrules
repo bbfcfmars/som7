@@ -1,0 +1,10 @@
+# AREA 52/MOTHER .cursorrules
+
+- Enforce dedicated Python virtual environment in project root
+- All dependencies installed only in venv
+- No global/system Python packages
+- All scripts/workflows reference venv
+- All code/config/doc changes must be logged
+- No destructive actions without plan/user confirmation
+- No experimentation outside plan
+- All standards and templates sourced from MOTHER 

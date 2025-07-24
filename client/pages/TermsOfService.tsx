@@ -1,7 +1,7 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function TermsOfService() {
   useEffect(() => {
@@ -217,7 +217,7 @@ export default function TermsOfService() {
                 </p>
                 <div className="space-y-2">
                   <p className="text-muted-foreground">
-                    <strong>Email:</strong>{" "}
+                    <strong>Email:</strong>{' '}
                     <a
                       href="mailto:info@atsomniumpartners.com"
                       className="text-primary hover:underline"

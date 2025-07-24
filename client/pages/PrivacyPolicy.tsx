@@ -1,7 +1,7 @@
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { motion } from "framer-motion";
-import { useEffect } from "react";
+import { Header } from '@/components/Header';
+import { Footer } from '@/components/Footer';
+import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function PrivacyPolicy() {
   useEffect(() => {
@@ -158,7 +158,7 @@ export default function PrivacyPolicy() {
                 </h2>
                 <p className="text-muted-foreground">
                   If you have any questions or concerns about this Privacy
-                  Policy, please contact us at{" "}
+                  Policy, please contact us at{' '}
                   <a
                     href="mailto:info@atsomniumpartners.com"
                     className="text-primary hover:underline"

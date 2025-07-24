@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
 export function Contact() {
   return (
@@ -7,7 +7,7 @@ export function Contact() {
       className="p-[5%_10%_10%] bg-section-light"
       style={{
         boxShadow:
-          "0 25px 30px -5px rgba(0, 0, 0, 0.95), 0 15px 20px -3px rgba(0, 0, 0, 0.6)",
+          '0 25px 30px -5px rgba(0, 0, 0, 0.95), 0 15px 20px -3px rgba(0, 0, 0, 0.6)',
       }}
     >
       <div className="container mx-auto px-6">
@@ -49,7 +49,7 @@ export function Contact() {
                     whileHover={{
                       scale: 1.05,
                       transition: {
-                        type: "spring",
+                        type: 'spring',
                         stiffness: 300,
                         damping: 15,
                         duration: 0.2,
@@ -79,7 +79,7 @@ export function Contact() {
                     whileHover={{
                       scale: 1.05,
                       transition: {
-                        type: "spring",
+                        type: 'spring',
                         stiffness: 300,
                         damping: 15,
                         duration: 0.2,
@@ -109,7 +109,7 @@ export function Contact() {
                     whileHover={{
                       scale: 1.05,
                       transition: {
-                        type: "spring",
+                        type: 'spring',
                         stiffness: 300,
                         damping: 15,
                         duration: 0.2,
@@ -190,7 +190,7 @@ export function Contact() {
                     whileHover={{
                       scale: 1.1,
                       transition: {
-                        type: "spring",
+                        type: 'spring',
                         stiffness: 400,
                         damping: 10,
                         duration: 0.3,
