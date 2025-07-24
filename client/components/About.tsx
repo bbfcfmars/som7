@@ -5,7 +5,7 @@ export function About() {
       className="p-[5%_10%_10%] bg-section-light"
       style={{
         boxShadow: "21px 30px 50px 5px rgb(0, 0, 0)",
-        marginTop: "-10px",
+        marginTop: "-50px",
       }}
     >
       <div className="container mx-auto px-6">
