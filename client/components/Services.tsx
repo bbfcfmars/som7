@@ -31,7 +31,7 @@ export function Services() {
         (window.innerHeight - rect.top) / (window.innerHeight + rect.height)
       ));
       
-      setParallaxOffset((scrollProgress - 0.5) * 52.5);
+      setParallaxOffset((scrollProgress - 0.5) * 100);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
