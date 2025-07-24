@@ -3,7 +3,8 @@ import { useState, useEffect } from "react";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(() => window.scrollY > 10);
+  const [hasInitialized, setHasInitialized] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === "/";
@@ -24,15 +25,17 @@ export function Header() {
       setIsScrolled(window.scrollY > 10);
     };
 
-    handleScroll();
+    // Set initialized after first render to enable transitions
+    setHasInitialized(true);
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100 py-1" 
+    <header className={`fixed top-0 left-0 right-0 z-50 ${hasInitialized ? 'transition-all duration-300' : ''} ${
+      isScrolled
+        ? "bg-white/95 backdrop-blur-sm shadow-sm border-b border-gray-100 py-1"
         : "bg-gradient-to-b from-white via-white/95 to-transparent py-3"
     }`}>
       <div className="container mx-auto px-6 flex items-center justify-between">
@@ -41,16 +44,23 @@ export function Header() {
           <img
             src="https://cdn.builder.io/api/v1/image/assets%2F52e09206a5c749d8aeea1c7b00565bbd%2F2febca80a8f84e69affcc27000235d2d"
             alt="Atsomnium Partners Logo"
-            className={`w-auto transition-all duration-300 hover:scale-105 ${
-              isScrolled ? "h-10 ml-0" : "h-20 md:h-25 ml-[10%]"
+            className={`w-auto hover:scale-105 ${hasInitialized ? 'transition-all duration-300' : ''} ${
+              isScrolled ? "h-10" : "h-20 md:h-24"
             }`}
+            style={{
+              marginLeft: isScrolled ? '0' : '10%'
+            }}
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className={`hidden md:flex items-center transition-all duration-300 ${
-          isScrolled ? "gap-8" : "gap-14 mr-[15%]"
-        }`}>
+        <nav
+          className={`hidden md:flex items-center ${hasInitialized ? 'transition-all duration-300' : ''}`}
+          style={{
+            gap: isScrolled ? '2rem' : '3.5rem',
+            marginRight: isScrolled ? '0' : '15%'
+          }}
+        >
           {["about", "services", "contact"].map((section) => (
             <button
               key={section}
