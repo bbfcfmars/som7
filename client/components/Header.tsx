@@ -104,10 +104,10 @@ export function Header() {
       />
 
       <motion.div
-        className="relative container mx-auto px-6"
+        className="relative flex items-center justify-between container mx-auto px-6"
         animate={{
-          paddingTop: isScrolled ? "0.25rem" : "1.5rem",
-          paddingBottom: isScrolled ? "0.25rem" : "1.5rem",
+          paddingTop: isScrolled ? "0.25rem" : "0.75rem",
+          paddingBottom: isScrolled ? "0.25rem" : "0.75rem",
         }}
         transition={{
           duration: hasInitialized ? 0.3 : 0,
@@ -115,11 +115,10 @@ export function Header() {
         }}
         style={{
           willChange: "padding",
-          paddingTop: isScrolled ? "0.25rem" : "1.5rem",
-          paddingBottom: isScrolled ? "0.25rem" : "1.5rem",
+          paddingTop: isScrolled ? "0.25rem" : "0.75rem",
+          paddingBottom: isScrolled ? "0.25rem" : "0.75rem",
         }}
       >
-        <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center cursor-pointer">
             <motion.img
@@ -256,7 +255,6 @@ export function Header() {
               />
             </svg>
           </button>
-        </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
